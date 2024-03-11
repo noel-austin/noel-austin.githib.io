@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     finalHousing = document.getElementById('final-housing');
     finalSpent = document.getElementById('finalSpent');
 
-    var buttons = document.querySelectorAll('.chart-action');
+
 
     var slider1 = document.getElementById('slider1');
     var slider2 = document.getElementById('slider2');
@@ -572,7 +572,7 @@ document.addEventListener('DOMContentLoaded', function () {
             popularity2.style.width = `${popularity2Value}%`;
             popularity2.style.backgroundColor = popularity2Value <= 40 ? 'red' : '#4CAF50'; // Change color based on value
             event.preventDefault();
-            if (goals == 0) {
+            if (goals == 3) {
                 // Show the modal if goals are completed
 
                 endModal.style.display = "block";
@@ -626,6 +626,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function updateBudgetChart() {
+            console.log("Budget chart upadted");
             budgetChart.data([
                 { x: "Social Protection", value: (socialProtectionAllocation / 1000000) + parseInt(socialProtectionVariable.innerText) },
                 { x: "Health", value: (healthAllocation / 1000000) + parseInt(healthVariable.innerText) },
@@ -759,16 +760,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         }
+        var decreaseButtons = document.querySelectorAll('.chart-action');
+        var increaseButtons = document.querySelectorAll('.chart-action');
 
-        var decreaseButton = document.getElementById('decrease');
-        var increaseButton = document.getElementById('increase');
-        decreaseButton.addEventListener('click', function () {
-            updateBudgetChart();
+        decreaseButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                updateBudgetChart();
+            });
         });
 
-        increaseButton.addEventListener('click', function () {
-            updateBudgetChart();
+        increaseButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                updateBudgetChart();
+            });
         });
+
+
+
 
         function clearTextSelection() {
             if (window.getSelection) { // All browsers except IE <9
