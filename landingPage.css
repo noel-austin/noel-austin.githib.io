@@ -1,36 +1,33 @@
 /* Add your CSS here */
-body {
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background: #222222;
     
   }
 
-  @media (max-width: 768px) {
-    .page-title {
-      font-size: 100px; /* Example of adjusting font size for smaller screens */
-    }
-    .text-block, .button, .button-link {
-      font-size: 2rem; /* Adjust font size for readability on smaller screens */
-    }
-  }
+
   .page-title {
     color: white;
-    font-size: 20px;
-    padding-bottom: 10px;
+    font-size: 5px;
+    padding-bottom: 2.5px;
    
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     left: 50%;
   }
 
   #buttonContainer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
   }
 
   .button {
-    padding: 20px 50px;
-    font-size: 3rem;
+    padding: 5px 12.5px;
+    font-size: 0.75rem;
     margin: 0px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -44,9 +41,9 @@ body {
 
  .waste-generation {
   position: relative;
-  padding: 20px;
+  padding: 5px;
   width: 50%;
-  height: 1800px;
+  height: 450px;
   margin: 0 auto;
   
   justify-content: center;
@@ -65,8 +62,8 @@ body {
 
   #imageDisplay {
     text-align: center;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 5px auto;
+    padding: 5px;
     
   /* Ensure the container is large enough to accommodate bigger images */
    /* Adjust this as needed */
@@ -76,7 +73,7 @@ body {
 
   #imageDisplay img {
     width: 100%; /* Image will scale to fit its container */
-    max-width: 1500px; /* Adjust this value to control the image size */
+    max-width: 375px; /* Adjust this value to control the image size */
     height: auto; /* Maintain aspect ratio */
     display: none; /* Hide images by default */
     margin: 0 auto; /* Centers block-level elements horizontally */
@@ -93,9 +90,9 @@ body {
 
   #divider {
     width: 40%; /* Adjust the width as needed */
-    height: 2px; /* Adjust the thickness of the line */
+    height: 0.5px; /* Adjust the thickness of the line */
     background-color: white;
-    margin: 30px auto; /* Centers the line horizontally and adds space above and below */
+    margin: 7.5px auto; /* Centers the line horizontally and adds space above and below */
   }
 
   #imageRow {
@@ -103,8 +100,8 @@ body {
     justify-content: center; /* This centers the images horizontally in the container */
     align-items: center; /* This centers the images vertically */
     max-width: 100%;
-    height: 1500px;
-    gap: 150px; /* This adds space between the images */
+    height: 375px;
+    gap: 37.5px; /* This adds space between the images */
   }
   
 #barChart1,#barChart2 {
@@ -115,7 +112,7 @@ body {
   
 .chart{
   position: relative;
-  padding: 20px;
+  padding: 5px;
   justify-content: center;
   align-items: center;
   
@@ -145,7 +142,7 @@ body {
 
   .text-block {
     width: 40%;
-    font-size: 3rem;
+    font-size: 0.75rem;
     margin: 0 auto;
     text-align: justify;
   }
@@ -154,7 +151,7 @@ body {
     background-color: #222222;
 
     color: white;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
   }
   
@@ -166,24 +163,24 @@ body {
   
   nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 5px;
   }
   
   article {
     background-color: #222222;
-    margin: 20px 0;
-    padding: 20px;
+    margin: 5px 0;
+    padding: 5px;
   }
 
   .button-link {
     display: inline-block; /* Allows the application of padding and margin */
-    font-size: 4rem;
-    padding: 10px 20px; /* Adds space inside the button */
-    margin: 100px 0; /* Adds space outside the button, adjust as needed */
+    font-size: 1rem;
+    padding: 2.5px 5px; /* Adds space inside the button */
+    margin: 25px 0; /* Adds space outside the button, adjust as needed */
     background-color: #4CAF50; /* Background color of the button */
     color: white; /* Text color */
     text-decoration: none; /* Removes underline from link */
-    border-radius: 5px; /* Rounds the corners of the button */
+    border-radius: 1.25px; /* Rounds the corners of the button */
     border: none; /* Removes the border */
     text-align: center; /* Centers the text */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */

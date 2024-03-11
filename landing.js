@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Clear the chart container
         const chartContainer = document.getElementById('chartContainer');
-        chartContainer.innerHTML = '<img id="chartImage" src="" alt="Chart Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%;  display: none; max-height: 650px; max-width: 400px;">';
+        chartContainer.innerHTML = '<img id="chartImage" src="" alt="Chart Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%;  display: none; max-height: 162.5px; max-width: 100px;">';
 
         // Create a chart based on the chartId
         anychart.onDocumentReady(function () {
@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
             chart.legend(false);
             chart.innerRadius("70%");
             chart.labels().useHtml(true);
-            chart.labels().format("<span style='font-size:45px'>{%value}%</span>");
+            chart.labels().format("<span style='font-size:11.25px'>{%value}%</span>");
             chart.tooltip().titleFormat(function () {
-                return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+                return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
             });
             chart.tooltip().useHtml(true);
             chart.tooltip().format(function () {
-                return '<div style="font-size: 4rem;">' + this.value + '%</div>';
+                return '<div style="font-size: 1rem;">' + this.value + '%</div>';
             });
             chart.background().fill("none")
             chart.container('chartContainer');
