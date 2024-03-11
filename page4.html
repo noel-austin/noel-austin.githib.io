@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Landing Page</title>
+    
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="page4.css">
+    
+  </head>
+
+  
+
+  <body>    
+
+    <script src="page4.js"></script>
+
+        <div class="container">
+          <div class="step-indicator">
+            <a href="page3.html" class="button-link">← Previous </a>
+            <div class="step prev"><span class="step-title">Public Awareness & Education</span></div>
+            <div class="step prev"><span class="step-title">Bring Centre</span></div>
+            <div class="step prev"><span class="step-title">Single Use Packaging</span></div>
+            <div class="step active"><span class="step-title">Contamination</span></div>
+            <div class="step"><span class="step-title">Challenges</span></div>
+            <a href="challenge1.html" class="button-link">Next →</a>
+          </div>
+          <div class="circle-container">
+            <div id="circle"> <span id="title">Contamination</span></div>
+          </div>
+          <div class="single-use-plastic">
+            <h1 class = title>Contamination</h1>
+            <div id="divider"></div>
+            <p class="text-block">Contamination includes leftover or residual food and liquids on paper, cardboard, plastic and metal materials. These contaminants should be washed off before the materials are put in the bin. For example, a pizza box with bits of food or heavy grease stains cannot be recycled unless these are washed off. </p>
+            <!-- Add icons and content -->
+            <p class="text-block">In Ireland, 8% of all waste found in black bins is contamination and 10% in green bins. This contamination reduces the amount of rubbish that can actually be recycled, leading to higher waste incineration and higher pollution. The government could invest in the monitoring of contamination and introduce fines for the amount of it found in household bins. Similary to the single use plastic tax, increased fines will lead to an unpopular government.     </p>
+          </div>
+          <div class="slider-container">
+            <input type="range" id="slider" min="0" max="100" value="0">
+
+          </div>
+          <div class="gov-pop-tax">
+            <div class="bar">
+              <div class="tax"> Fine: €<span id="taxRate"> 0</span> per kg of Contamination</div>
+              <label for="gov-pop" class="pop-label">Government Popularity: </label>
+              <div class="gov-pop">
+                  <div id="popularityBar" class="progress-bar">100%</div>
+                </div>
+            </div>
+          </div>
+          
+          <div class="charts">
+            <div class="chart1-container">
+              <div id="chart1" style="width: 1200px; height: 1200px;"></div>
+              <img src="/pictures/genBinOutline.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; height: auto;">
+            </div>
+            <div class="chart2-container">
+              <div id="chart2" style="width: 1200px; height: 1200px;"></div>
+              <img src="/pictures/recBinOutline.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; height: auto;">
+            </div>
+          </div>
+          
+        </div>
+
+        
+     
+  </body>
+</html> 

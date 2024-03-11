@@ -1,0 +1,1152 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #222222;
+    
+  }
+
+  .nav-bar {
+    width: 100%;
+    
+    font-size: 15px;
+    color: white;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    margin-top: 30px;
+    float: right;
+  }
+  
+
+  .nav-bar ul {
+    list-style: none;
+  }
+
+  .nav-bar ul li {
+    display: inline-block;
+    margin-left: 75px;
+  }
+  .nav-bar ul li:hover {
+    color: rgb(50, 194, 81);
+  }
+
+  .top-link{
+    color: aliceblue;
+    font-size: 60px;
+    text-decoration: none;
+  }
+
+  .top-link.active {
+    color: rgb(50, 194, 81);
+  }
+
+
+
+  .statistics {
+    width: 90%;
+    height: 100px;
+    padding: 20px;
+    position: relative;
+    background-color: #424040;
+    display: flex;
+    color: aliceblue;
+    font-size: 4rem;
+    gap:3%;
+    align-items: center;
+    border: 6px solid #898787;
+    
+  }
+
+  .edit-budget{
+    display: inline-block; /* Allows the application of padding and margin */
+    font-size: 5rem;
+    padding: 10px 20px; /* Adds space inside the button */
+    margin: 10px;
+    justify-self: center;
+    border-radius: 50px;
+    background-color: #00BF63; /* Background color of the button */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from link */
+    border-radius: 10px; /* Rounds the corners of the button */
+    border: none; /* Removes the border */
+    text-align: center; /* Centers the text */
+    cursor: pointer;
+   
+  }
+
+  
+
+  .bar{
+    width: 50%;
+  }
+
+  .microworld {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    display: flex;
+    gap: 25px;
+  }
+
+
+  .graphs {
+    width: 75%;
+    height: 100%;
+    border: 12px solid #B22222;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 23%;
+   
+  
+  }
+
+  .controls, .goal-box {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 15px;
+    background-color: #424040;
+    border: 6px solid #898787;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    
+    
+    align-items: center; /* Centers children horizontally in a flex column layout */
+    justify-content: center; /
+  }
+
+  .goal-box {
+    width: 100%;
+    color: aliceblue;
+    background-color: #424040;
+    border: 6px solid #898787;
+    font-size: 40px;
+   
+
+  }
+
+  .circleChart {
+    width: 50%;
+    height: 100%;
+  }
+
+  #circleChart {
+    position: relative ;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bingraphs {
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    display: block;
+  }
+  .chart1-container { 
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    justify-content: center;
+    align-items: center; 
+    
+    
+
+}
+  .chart2-container { 
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    justify-content: center;
+    align-items: center; 
+    
+ }
+  .chart3-container { 
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    justify-content: center;
+    align-items: center; 
+    
+ }
+
+ .bar-chart-container {
+    width: 50%;
+    height: 50%;
+    
+    position: absolute;
+    bottom: 0%;
+ }
+  
+ #chart1 {
+    width: 100%;
+    height: 100%;
+ }
+ #chart2 {
+    width: 100%;
+    height: 100%;
+ }
+ #chart3 {
+    width: 100%;
+    height: 100%;
+ }
+ #barChart {
+   
+    width: 100%;
+    height: 100%;
+ }
+
+ .slider-container {
+    margin: 20px;
+    margin-bottom: 70px;
+    width: 100%;
+}
+
+.slider-label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 60px;
+    color:aliceblue;
+}
+
+.bar .pop-label {
+    display: flex;
+    font-size: 5rem;
+    color:aliceblue;
+}
+
+.bar {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    gap: 20px; 
+    white-space: nowrap;
+}
+
+.budget {
+  width: 50%;
+}
+
+#reading {
+  font-size: 5rem;
+  color: aliceblue;
+  padding-left: 10px;
+  display: flex;
+  text-align: center;
+  color: white;
+  align-items: center;
+}
+
+#goals {
+  font-size: 90px;
+  color: aliceblue;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 10%;
+}
+
+#goal {
+  font-size: 60px;
+  color: aliceblue;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  
+  align-items: center;
+  color: white;
+  
+}
+
+
+#next-challenge{
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 3rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  cursor: pointer;
+}
+
+.gov-pop {
+    width: 100%;
+    display: flex;
+    background-color: #292B2A;
+    /* Add some padding around the progress bar for visibility */
+     /* Optional: Adds rounded corners to the container */
+    
+     /* Optional: Adds a subtle shadow for depth */
+     border-radius: 8px;
+     align-items: center;
+     font-size: 5rem;
+    
+}
+
+.progress-bar {
+    width: 100%;
+  
+    background-color: #4CAF50;
+    text-align: center;
+    color: white;
+    align-items: center;
+    font-size: 4rem;
+    border-radius: 8px;
+    transition: width 0.3s ease;
+    height: 80px; /* Adjust as needed */
+    
+}
+
+.progress-bar.golden {
+  background-color: #EDC967
+}
+
+#slider1,#slider2,#slider3,#slider4,#slider5 {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    position: relative;
+    
+    width: 75%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  #slider1:hover, #slider2:hover, #slider3:hover, #slider4:hover, #slider5:hover{
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+
+  #slider1::-webkit-slider-thumb, #slider2::-webkit-slider-thumb, #slider3::-webkit-slider-thumb, #slider4::-webkit-slider-thumb, #slider5::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 50px; /* Set a specific slider handle width */
+    height: 50px; /* Slider handle height */
+    border-radius: 50%;
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  #slider1::-moz-range-thumb, #slider2::-moz-range-thumb, #slider3::-moz-range-thumb, #slider4::-moz-range-thumb, #slider5::-moz-range-thumb {
+    width: 50px; /* Set a specific slider handle width */
+    height: 50px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  /* Modal (background) */
+.modal, .endModal, .summaryModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+ 
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  opacity: 0; /* Start fully transparent */
+  transition: opacity 0.5s linear; /* Animate the opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This will push the footer to the bottom */
+  align-items: center; /* Center children horizontally */
+  position: relative;
+  background-color: #222222;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Adjust width as needed */
+  height: 50%; /* Adjust height as needed */
+  transition: transform 0.5s ease-out, opacity 0.5s linear;
+}
+
+
+
+.modal-footer{
+  position: absolute;
+  bottom: 0px; /* Distance from the bottom of the modal-content */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px; /* Add padding on the sides if needed */
+}
+
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  color: #aaa;
+  float: right;
+  font-size: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev {
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 3rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s; 
+  cursor: pointer;
+}
+
+.next {
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 3rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.begin{
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 3rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+#helpBtn {
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 4rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #222222; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.modal-image1 {
+  max-width: 40%; /* Adjust based on modal size and desired image size */
+  max-height: 100%; /* Maintain aspect ratio */
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+
+}
+
+.images{
+  height: 75%;
+  width: 100%;
+  align-items: center;
+  justify-self: center;
+  display: flex;
+  justify-content: center; /* Center the images */
+  flex-wrap: wrap; /* Allow images to wrap if needed */
+  gap: 10px; /* Space between images */
+}
+
+.modal-text {
+  text-align: center; /* Center the text */
+  margin-bottom: 20px; /* Adjust the space between the text and the ima*/
+  font-size: 60px;
+  color: aliceblue;
+}
+
+
+.images2{
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  
+  display: flex;
+  justify-content: center; /* Center the images */
+
+  gap: 10px; /* Space between images */
+}
+
+
+
+.image1{
+  width: 30%; /* Adjust based on modal size and desired image size */
+  max-height: 20%; /* Maintain aspect ratio */
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+}
+.image2{
+  width: 40%; /* Adjust based on modal size and desired image size */
+
+ 
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+}
+.image3{
+  width: 20%; /* Adjust based on modal size and desired image size */
+
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+}
+.image4{
+  width: 50%; /* Adjust based on modal size and desired image size */
+
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+}
+
+.modal-page{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  gap: 20px; /* Space between items */
+}
+
+.modal-image21{
+  width: 100%;
+}
+.modal-image22{
+  width: 100%;
+}
+.modal-image23{
+  width: 100%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #393838;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 100px;
+  font-size: 10rem;
+  margin-left: 50px;
+  color: #fff;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+.budgetGraph-container{
+  height: 50%;
+  
+  justify-content: center;
+  align-items: center; 
+}
+#budgetGraph{
+  height: 100%;
+  padding: 2%;
+}
+
+
+#categories{
+  font-size: 5rem;
+  width: 100%;
+  padding: 5%;
+  color: #fff;
+  
+}
+.category button{
+  font-size: 5rem;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+#increase{
+  display: inline-block; /* Allows the application of padding and margin */
+  
+  
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+#decrease{
+  display: inline-block; /* Allows the application of padding and margin */
+  
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #FF3131; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.sidenav-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 9rem;
+  color: #fff;
+  border-bottom: 1;
+}
+
+.sidenav-subtitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: #fff;
+  padding-left: 30px;
+}
+
+
+
+
+#recyclingAndWaste{
+  font-size: 6rem;
+  color: #fff;
+  padding: 2%;
+  padding-bottom: 4%;
+}
+
+.end-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  align-items: center; /* Center children horizontally */
+  position: relative;
+  background-color: #222222;
+  margin: 15% auto;
+  padding: 20px;
+  top: -15%;
+  border: 1px solid #888;
+  width: 70%; /* Adjust width as needed */
+  height: 70%; /* Adjust height as needed */
+  transition: transform 0.5s ease-out, opacity 0.5s linear;
+}
+.end-modal-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  color: #fff;
+  border-bottom: 1;
+}
+
+.end-modal-subtitle{
+  
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: #fff;
+  border-bottom: 1;
+}
+
+.gov-pop2  {
+  width: 100%;
+  display: flex;
+  background-color: #292B2A;
+  /* Add some padding around the progress bar for visibility */
+   /* Optional: Adds rounded corners to the container */
+  
+   /* Optional: Adds a subtle shadow for depth */
+   border-radius: 8px;
+   align-items: center;
+   font-size: 5rem;
+  
+}
+
+.progress-bar2 {
+  width: 100%;
+
+  background-color: #4CAF50;
+  text-align: center;
+  color: white;
+  align-items: center;
+  font-size: 7rem;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+  height: 120px; /* Adjust as needed */
+  
+}
+
+.bar2 .pop-label {
+  display: flex;
+  font-size: 7rem;
+  color:aliceblue;
+}
+
+.bar2 {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  gap: 20px; 
+  white-space: nowrap;
+}
+
+.endModal button{
+  font-size: 5rem;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+#increasePop{
+  display: inline-block; /* Allows the application of padding and margin */
+  
+  
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+#decreasePop{
+  display: inline-block; /* Allows the application of padding and margin */
+  
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #FF3131; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+#summarise{
+  width: 15%;
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 4rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  cursor: pointer;
+}
+
+.summary-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  align-items: center; /* Center children horizontally */
+  position: relative;
+  background-color: #222222;
+  margin: 15% auto;
+  padding: 20px;
+  top: -20%;
+  border: 1px solid #888;
+  width: 70%; /* Adjust width as needed */
+  height: 80%; /* Adjust height as needed */
+  transition: transform 0.5s ease-out, opacity 0.5s linear;
+}
+
+.sum-modal-title{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  color: #fff;
+  border-bottom: 1;
+}
+
+.sum-header{
+  position: absolute;
+  top: 0%;
+  display: flex;
+  height: 5%;
+  width: 100%;
+  justify-content: center;
+}
+.sum-footer{
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  height: 10%;
+  width: 100%;
+  justify-content: center;
+}
+
+.restart{
+  width: 15%;
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 4rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  cursor: pointer;
+}
+
+.summary {  
+  position: relative;
+  top: 5%;
+  display: grid;
+  width: 100%;
+  height: 85%;
+  grid-template-columns: 0.9fr 0.7fr 1.4fr;
+  grid-template-rows: 1.1fr 0.9fr;
+  gap: 0px 0px;
+
+ 
+  grid-template-areas: 
+    "sum-budget-cuts sum-pie-chart sum-pie-chart"
+    "sum-total-waste sum-bar-chart sum-gov-pop"; 
+}
+
+.sum-budget-cuts { 
+  grid-area: sum-budget-cuts; 
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  padding: 2%;
+}
+
+.sum-bar-chart { 
+  grid-area: sum-bar-chart; 
+  border-right: 2px solid #fff;
+  padding: 2%;
+}
+
+.sum-pie-chart { 
+  grid-area: sum-pie-chart; 
+  border-bottom: 2px solid #fff;
+  display: flex;
+  width: 100%;
+}
+
+.sum-total-waste { 
+  grid-area: sum-total-waste; 
+  border-right: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.sum-gov-pop { 
+  grid-area: sum-gov-pop; 
+  padding: 5%;
+  
+}
+
+.popularity-bar{
+  transform: translate(+10%, +50%);
+}
+
+.theCircleContainer{
+  top: 5%;
+  display: flex;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sum-circle{
+  width: 65%; /* 80% of the container's width */
+  aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio */
+  background-color: #707275; /* Circle color */
+  border: 6px solid #A6A6A6; 
+  border-radius: 50%; /* Makes it a circle */
+  transition: transform 0.5s; /* Smooth transition for transform */
+  transform-origin: center; /* Ensures scaling from center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+ 
+  font-size: 4rem;
+  
+}
+
+
+#sum-bar-chart{
+  bottom: 0%;
+  height: 100%;
+}
+
+
+.gov-pop3  {
+  width: 80%;
+  display: flex;
+  background-color: #292B2A;
+  /* Add some padding around the progress bar for visibility */
+   /* Optional: Adds rounded corners to the container */
+  
+   /* Optional: Adds a subtle shadow for depth */
+   border-radius: 8px;
+   align-items: center;
+   font-size: 5rem;
+  
+}
+
+.progress-bar3 {
+  width: 100%;
+
+  background-color: #4CAF50;
+  text-align: center;
+  color: white;
+  align-items: center;
+  font-size: 7rem;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+  height: 120px; /* Adjust as needed */
+  
+}
+
+.pop-label2 {
+  display: flex;
+  font-size: 4rem;
+  color:aliceblue;
+}
+
+.bar3 {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  gap: 20px; 
+  white-space: nowrap;
+}
+
+.sum-circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sum-chart1-container, .sum-chart2-container,.sum-chart3-container{
+  flex: 1;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  align-items: center; 
+}
+
+
+#sum-chart1 {
+  width: 100%;
+  height: 100%;
+}
+#sum-chart2 {
+  width: 100%;
+  height: 100%;
+}
+#sum-chart3 {
+  width: 100%;
+  height: 100%;
+}
+
+.bin-pics{
+  position: absolute; /* Position images absolutely within the flex container */
+  max-width: 30%; /* Adjust based on your preference */
+  max-height: 50%; /* Adjust based on your preference */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+  top: 50%;
+  left: 50%;
+  z-index: -1
+}
+
+.cuts-title{
+  display: flex;
+  padding-bottom: 5%;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.5rem;
+  color: #fff;
+  border-bottom: 1;
+}
+
+.cuts-line{
+  font-size: 4.5rem;
+  color: #fff;
+}
+
+.final-numbers{
+  float: right;
+}
+
+.totalSpent{
+  font-size: 4.5rem;
+  color: #fff;
+}
+
+#divider {
+  width: 100%; /* Adjust the width as needed */
+  height: 2px; /* Adjust the thickness of the line */
+  float: left;
+  
+  background-color: white;
+  margin: 10px auto; /* Centers the line horizontally and adds space above and below */
+}
+
+.info-button {
+  position: relative;
+  display: inline-flex; /* Use flex to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #101010; /* Example color */
+  color: white; /* Text color */
+  padding: 10px 45px; /* Adjust padding to scale with font size */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer;
+  font-size: 5rem; /* Adjust font size as needed */
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+ 
+}
+
+.hover-box {
+  visibility: hidden;
+  position: absolute;
+  min-width: 1000px; /* Minimum width to ensure it's wider */
+   /* A reasonable maximum width relative to the viewport */
+  width: auto; /* Allows the box to expand based on content up to max-width */
+  padding: 1rem; /* Adjust padding to fit large text */
+  font-size: 4rem; /* Large font size */
+  background-color: #f9f9f9;
+  color: #000;
+  text-align: left;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 100;
+  
+  left: 1600%;
+  transform: translateX(-50%);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  /* Adjust line height for better readability with large text */
+  line-height: 1.2;
+}
+
+.hover-box.higher{
+  top: 0%;
+}
+.hover-box.lower{
+  bottom: 60%;
+}
+
+.info-button:hover .hover-box {
+  visibility: visible;
+}

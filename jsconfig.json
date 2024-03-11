@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es6"
+  },
+  "include": [
+    "*.js",
+    "**/*.js",
+    "c:\\Users\\Noel\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.15\\p5types\\global.d.ts"
+, "../MyProject/god help/c2.js", "../restart/libraries/p5.js", "../restart/Boxes.js"  ]
+}

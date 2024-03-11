@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #222222;
+    
+  }
+
+  .title {
+    color: white;
+    font-size: 150px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  #divider {
+    width: 80%; /* Adjust the width as needed */
+    height: 2px; /* Adjust the thickness of the line */
+    float: left;
+    
+    background-color: white;
+    margin: 30px auto; /* Centers the line horizontally and adds space above and below */
+  }
+
+  .text-block {
+    width: 90%;
+    float: left;
+    font-size: 3rem;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  .container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.8fr 2fr 0.5fr 0.5fr 2fr;
+    gap: 0px 0px;
+   
+    grid-template-areas:
+    "step-indicator step-indicator step-indicator step-indicator"
+    "bring-center bring-center map map"
+    "slider-container slider-container map map"
+    "budget budget map map"
+    "graph graph map map"; 
+  }
+  
+.step-indicator { 
+    grid-area: step-indicator; 
+    display: flex;
+    justify-content: center; /* Center the steps */
+    align-items: center;
+    position: relative; /* Needed for absolute positioning of lines */
+    padding: 20px 0; /* Adjust padding as needed */
+
+}
+  .bring-center { 
+    grid-area: bring-center;
+    color: white;
+    width: 90%;
+    margin-left: 50px;
+    
+ }
+
+ .budget { 
+  grid-area: budget; 
+  display: flex;
+  width: 100%;
+  padding-top: 100px;
+  padding-left: 20px;
+  color: white;
+  font-size: 152px;
+}
+  
+  .slider-container { 
+    grid-area: slider-container; 
+     margin-left: 50px
+}
+  
+  .map { 
+    grid-area: map; 
+    justify-content: center; /* Center the steps */
+    align-items: center;
+  }
+
+  .graph{
+    grid-area: graph;
+    padding: 50px;
+    justify-content: center; /* Center the steps */
+    align-items: center;
+  }
+
+  #barChart {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    left: 25%;
+  }
+
+
+
+  .step {
+    background-color: #ddd; /* Non-active step background color */
+    border-radius: 15px; /* Adjusted for rounded corners */
+    padding: 20px 40px; /* Adjusted padding inside each step */
+    margin: 0 100px; /* Increased spacing between steps */
+    text-align: center;
+    position: relative; /* Needed for absolute positioning of lines */
+  }
+  
+  .step:not(:last-child):not(:nth-last-child(2))::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -200px; /* Adjust based on the space between steps */
+    width: 400px; /* Adjusted to equal the space between steps */
+    height: 1px;
+    border-top: 15px dotted #ccc; /* Increased border size for sparser dots */
+    z-index: -1;
+    transform: translateY(-50%);
+  }
+  
+  .step.active {
+    background-color: #4CAF50; /* Active step background color */
+    color: white; /* Active step text color */
+  }
+
+  .step.prev {
+    background-color: #307033; /* Active step background color */
+    color: #B4AEAE; /* Active step text color */
+  }
+  
+  .step-title {
+    font-size: 4em; /* Adjust font size as necessary */
+  }
+
+  .button-link {
+    display: inline-block; /* Allows the application of padding and margin */
+    font-size: 3rem;
+    padding: 10px 20px; /* Adds space inside the button */
+    margin: 100px 0; /* Adds space outside the button, adjust as needed */
+    border-radius: 50px;
+    background-color: #15A0EF; /* Background color of the button */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from link */
+    border-radius: 5px; /* Rounds the corners of the button */
+    border: none; /* Removes the border */
+    text-align: center; /* Centers the text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  .button-link:hover {
+    background-color: #0D6FA6; /* Darker shade for hover effect */
+    color: #fff; /* Text color on hover */
+  }
+  
+
+  #slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    position: relative;
+    top: 100px;
+    width: 75%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  #slider:hover{
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  #slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 100px; /* Set a specific slider handle width */
+    height: 100px; /* Slider handle height */
+    border-radius: 50%;
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  #slider::-moz-range-thumb {
+    width: 50px; /* Set a specific slider handle width */
+    height: 50px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }

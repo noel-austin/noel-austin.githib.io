@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Landing Page</title>
+    
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-treemap.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="page3.css">
+    
+  </head>
+
+  <body>    
+
+    <script src="page3.js"></script>
+
+        
+          
+          <div class="container">
+            <div class="step-indicator">
+              <a href="page2.html" class="button-link">← Previous </a>
+              <div class="step prev"><span class="step-title">Public Awareness & Education</span></div>
+              <div class="step prev"><span class="step-title">Bring Centre</span></div>
+              <div class="step active"><span class="step-title">Single Use Packaging</span></div>
+              <div class="step"><span class="step-title">Contamination</span></div>
+              <div class="step"><span class="step-title">Microworld</span></div>
+              <a href="page4.html" class="button-link">Next →</a>
+            </div>
+            <div class="single-use-packaging">
+              <h1 class = title>Single Use Packaging</h1>
+              <div id="divider"></div>
+              <p class="text-block">Packaging comes with the porducts we buy for our homes. Ireland produced 1.2 million tonnes of packaging waste in 2021, and is growing at a rate of 5% per year. Packaging waste mainly comprises of cardboard, paper, plastic, and metal. Each year, 99% of packaging placed on the market is single use. </p>
+              
+              <p class="text-block">While it is important to ensure proper recycling of all packaging waste, it is even more important to reduce the amount of packagning  waste that is generated. For every 10kg of resuable packaging used, it saves 93kg of single use packaging. To curb the growth of packaging waste and reduce the amount generated each year, the government can introduce a tax on items purchased that use single use packaging. The greater the tax, the less single use packaging that will be bought and in turn find its way in household bins. However, the higher the government raise the prices of everyday products, their popularity among the public will suffer. </p>
+        
+            </div>
+            <div class="chart">
+              <div class="circle1">
+                <div class="circle" id="circle1"><span id="title1">Plastic Waste</span></div>
+              </div>
+              <div class="circle2">
+                <div class="circle" id="circle2"><span id="title2">Metal Waste</span></div>
+              </div>
+              <div class="circle3">
+                <div class="circle" id="circle3"><span id="title3">Paper Waste</span></div>
+              </div>
+              <div class="circle4">
+                <div class="circle" id="circle4"><span id="title4">Cardboard Waste</span></div>
+              </div>
+              
+              
+              
+              
+              
+              
+
+            </div>
+            
+            <div class="slider-container">
+              <input type="range" id="slider" min="0" max="100" value="0" step="10">
+              
+              
+            </div>
+            <div class="bar">
+              <div class="tax"> Tax Rate: <span id="taxRate"> 0</span>%</div>
+              <label for="gov-pop" class="pop-label">Government Popularity: </label>
+              <div class="gov-pop">
+                  <div id="popularityBar" class="progress-bar">100%</div>
+                </div>
+            </div>
+          </div>
+
+        
+     
+  </body>
+</html> 

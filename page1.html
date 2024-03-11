@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Landing Page</title>
+    
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="page1.css">
+    
+  </head>
+
+  <body>
+     
+    <script src="page1.js"></script>
+
+
+    <div class="container">
+
+      <div class="step-indicator">
+        <a href="index.html" class="button-link">← Previous </a>
+        <div class="step active"><span class="step-title">Public Awareness & Education</span></div>
+        <div class="step"><span class="step-title">Bring Centre</span></div>
+        <div class="step"><span class="step-title">Single Use Packaging</span></div>
+        <div class="step"><span class="step-title">Contamination</span></div>
+        <div class="step"><span class="step-title">Microworld</span></div>
+        <a href="page2.html" class="button-link">Next →</a>
+      </div>
+
+      <div class="public-awareness">
+        <h1 class = title>Public Awareness</h1>
+            <div id="divider"></div>
+            <p class="text-block1">Public awareness plays a significant role in the success of waste segregation and disposal initiatives. When communities are well informed about the importance of proper waste disposal, recycling, and composting, they are more likely to actively participate in the efforts. Investing in workshops, advertisements, and social media influencer partnerships, can help spread awareness about the importance of waste segregation and disposal. Government investment in public awareness can have positive effects on waste generation and segregation.</p>
+            <!-- Add icons and content -->
+            
+      </div>
+
+      <div class="education">
+        <h1 class = title>Waste Education in Schools</h1>
+            <div id="divider"></div>
+            <p class="text-block1">Education is vital in shaping the behaviours and attitudes of individuals when it comes to waste generation and disposal at home. When people understand the reasons behind proper waste disposal, the enviromental impacts of their actions, and the benefits of recycling, they are more likely to actively engage in responsible waste management. With more investing in education program in schools, the government can have a direct effect on the publics behaviour towards waste.</p>
+            <!-- Add icons and content -->
+            
+      </div>
+      <div class="slider1">
+        <input type="range" id="slider1" min="0" max="100" value="0">
+      </div>
+      <div class="slider2">
+        <input type="range" id="slider2" min="0" max="100" value="0">
+      </div>
+      <div class="budget">Cost on Budget: €<span id="costValue">0</span> </div>
+      <div class="graphics">
+        <div class="circle-container">
+          <div id="circle"> <span id="title">Total Waste Generated</span></div>
+        </div>
+        <div class="chart1-container">
+          
+          <div id="chart1" style="width: 1200px; height: 1200px;"></div>
+          <img src="/pictures/genBinOutline.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; height: auto;">
+        </div>
+        <div class="chart2-container">
+          <div id="chart2" style="width: 1200px; height: 1200px;"></div>
+          <img src="/pictures/recBinOutline.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; height: auto;">
+        </div>
+        <div class="chart3-container">
+          <div id="chart3" style="width: 1200px; height: 1200px;"></div>
+          <img src="/pictures/orgBinOutline.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; height: auto;">
+        </div>
+      </div>
+    </div>
+    
+    
+    
+  </body>
+</html> 

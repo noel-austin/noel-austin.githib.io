@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Landing Page</title>
+
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/2.1.0/countries/ireland/ireland.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="page2.css">
+    
+  </head>
+
+  <body>
+   
+    
+    
+
+      
+        
+        
+      </div>
+
+      <div class="container">
+        <div class="step-indicator">
+          <a href="page1.html" class="button-link">← Previous </a>
+          <div class="step prev"><span class="step-title">Public Awareness & Education</span></div>
+          <div class="step active"><span class="step-title">Bring Centre</span></div>
+          <div class="step"><span class="step-title">Single Use Packaging</span></div>
+          <div class="step"><span class="step-title">Contamination</span></div>
+          <div class="step"><span class="step-title">Microworld</span></div>
+          <a href="page3.html" class="button-link">Next →</a>
+        </div>
+        <div class="bring-center">
+          <h1 class = title>Bring Centres</h1>
+            <div id="divider"></div>
+            <p class="text-block">Civic Amenity Centres or Bring Centres can accept everything from general waste items to electronic goods and even hazardous waste. Most centres will also accept recyclable materials and organic waste. Some items that can’t go in your home recycling bin may be recyclable at a Bring Centre.</p>
+            <p class="text-block">13% of all waste found in household waste should be disposed of in bring centres, rather than being put in the black, green or brown bins. Currently 0% of waste is brought to bring centers in Ireland.  Investing in the creation of more bring centres in Ireland will cost the government, but the increase in accesbility will make it for conveinient for everyone to use them. </p>
+            
+        </div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="0" step="10" id="slider" id="myRange">
+        </div>
+        <div class="budget">Cost on Budget: €<span id="costValue">0</span></div>
+        <div class="graph">
+          <div id="barChart"></div>
+
+        </div>
+        <div class="map">
+          <div id="mapContainer" style="width: 100%; height: 2500px;"></div>
+
+        </div>
+      </div>
+
+        
+      <script src="page2.js"></script>
+  </body>
+</html> 

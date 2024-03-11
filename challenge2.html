@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Microworld</title>
+
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/2.1.0/countries/ireland/ireland.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="challenge3.css">
+    <script src="Waste.js"></script>
+    <script src="var.js"></script>
+    <script src="RatioAdjustment.js"></script>
+    <script defer src="challenge2.js"></script>
+  </head>
+
+  <body>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+       
+        <span class="close">&times;</span>
+        <div class="modal-page" data-page="1">
+          <div class="images">
+            <img src="pictures/democracy-image.png" class="modal-image1">
+            <img src="pictures/limited-money-image.png" class="modal-image1">
+            
+          </div>
+          <div class="modal-text">In this challenge, you are now leading a not so wealthy country and you no longer have unlimited resources. Your population are not as motivated to change their ways and won't take too kindly to the new taxes and fines you plan to introduce. It's time to start thinking about being re-elected into government so you will have to keep an eye on your popularity level. </div>
+          <div class="modal-footer">
+            <span class="spacer"></span> 
+            <button class="next">Next</button>
+          </div>
+          
+        </div>
+        <div class="modal-page" data-page="2" style="display:none;">
+          <div class="images2">
+             <div class="image1">
+              <img src="pictures/slider-image.png"  class="modal-image21">
+              <p class="modal-text">You will use the different factors you have learned about to change your populations behaviour.</p>
+            </div>
+            <div class="image2">
+              <img src="pictures/microworld-image.png"  class="modal-image22">
+              <p class="modal-text">The graph will show exactly how waste is managed in your country.</p>
+            </div>
+              <div class="image3">
+              <img src="pictures/goals-image.png"  class="modal-image23">
+              <p class="modal-text">To complete this challenge you must complete the goals.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
+          </div>
+         
+        </div>
+        <div class="modal-page" data-page="3" style="display:none;">
+          <div class="images2">
+            <div class="image1">
+             <img src="pictures/budget2-image.png"  class="modal-image21">
+             <p class="modal-text">You will now have to be mindful of your budget limitation when allocating resources.</p>
+           </div>
+           <div class="image4">
+             <img src="pictures/government-popularity-image.png"  class="modal-image22">
+             <p class="modal-text">You will also now have to be mindful of you governments popularity. It is capped at 40% to stop any potential uprisings!</p>
+           </div>
+             
+         </div>
+          <div class="modal-footer">
+            <button class="prev">Previous</button>
+            <button class="begin">Begin Challenge</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+   
+        <div class="nav-bar">
+        
+          <ul>
+            
+            <a href="challenge1.html" class="top-link"><li>Challenge 1</li></a>
+            <a href="challenge2.html" class="top-link active"><li>Challenge 2</li></a>
+            <a href="challenge3.html" class="top-link"><li>Challenge 3</li></a>
+            <a href="index.html" class="top-link"><li>Home</li></a>
+            <button id="helpBtn" class="top-link" ><li>Help</li></button>
+          </ul>
+        </div>
+        <div class="statistics">
+          <div class="budget">
+          <div id="reading">Recycling and Waste Budget Used:  <span id="totalUsed">0</span>/660m</div>
+        </div>
+            <div class="bar">
+                <label for="gov-pop" class="pop-label">Government Popularity: </label>
+                <div class="gov-pop">
+                    <div id="popularityBar" class="progress-bar">100%</div>
+                  </div>
+            </div>
+            
+           
+        </div>
+        <div class="microworld">
+            <div class="graphs">
+                <div class="circleChart">
+                    <div id="circleChart" ></div>
+                </div>
+                <div class="bingraphs">
+                    <div class="chart1-container">
+                        <div id="chart1" "></div>
+                        <img src="/pictures/genBinOutline.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; height: auto;z-index: -1;">
+                    </div>
+                    <div class="chart2-container">
+                        <div id="chart2" ></div>
+                        <img src="/pictures/recBinOutline.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; height: auto;z-index: -1;">
+                    </div>
+                    <div class="chart3-container">
+                        <div id="chart3" ></div>
+                        <img src="/pictures/orgBinOutline.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%; height: auto;z-index: -1;">
+                    </div>
+                    <div class="bar-chart-container">
+                        <div id="barChart"></div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="info">
+                <<div class="controls">
+                  <div class="slider-container">
+                      <label for="slider1" class="slider-label">Public Awareness: €<span id="sliderValue1">0</span></label>
+                      <input type="range" id="slider1" min="0" max="100" value="0" step="10">
+                    </div>
+                    
+                    <div class="slider-container">
+                      <label for="slider2" class="slider-label">Education in Schools: €<span id="sliderValue2">0</span></label>
+                      <input type="range" id="slider2" min="0" max="100" value="0" step="10">
+                    </div>
+                    
+                    <div class="slider-container">
+                      <label for="slider3" class="slider-label">Bring Centres: €<span id="sliderValue3">0</span></label>
+                      <input type="range" id="slider3" min="0" max="100" value="0" step="10">
+                    </div>
+                    
+                    <div class="slider-container">
+                      <label for="slider4" class="slider-label">Single Use Packaging Tax: <span id="sliderValue4">0</span>%</label>
+                      <input type="range" id="slider4" min="0" max="30" value="0" step="3">
+                    </div>
+                    
+                    <div class="slider-container">
+                      <label for="slider5" class="slider-label">Contamination Fine: €<span id="sliderValue5">0</span> per kg</label>
+                      <input type="range" id="slider5" min="0" max="100" value="0" step="10">
+                    </div>
+              </div>
+                <div class="goal-box">
+                  <div id="goals">Goals: <span id="goal-count"></span></div>
+                  <div id="goal">Decrease Total Waste Generation: <span id="waste-gen" class="final-numbers">0</span></div><br><br>
+                  <div id="goal">Reduce the amount of waste found in general waste: <span id="general-waste" class="final-numbers">0</span></div><br><br>
+                  <div id="goal">Increase Bring Centre Usage: <span id="bring-usage" class="final-numbers">0</span></div>
+                  <a id="next-challenge" href="challenge3.html">Next Challenge →</a>
+         
+               </div>
+            </div>
+        </div>
+        
+        
+       
+        <div class="bottom"></div>
+      
+
+
+
+
+
+
+ 
+    
+
+        
+      
+  </body>
+</html> 

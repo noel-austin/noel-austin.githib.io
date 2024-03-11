@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Landing Page</title>
+
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-bundle.min.js"></script>
+    <script src="libraries/c2.js"></script>
+    <script src="var.js"></script>
+    <script src="landing.js"></script>
+    <script src="landing2.js"></script>
+    <link rel="stylesheet" type="text/css" href="landingPage.css">
+    
+  </head> 
+
+  <body>
+    <header>
+        <h1 class="page-title">Recycling and Waste</h1>
+        <div id="divider"></div>
+        <p class="text-block">Ireland currently has a major issue with household waste. Irish homes generate a very large amount of waste per year, 361kg per person, compared to the European average 293kg. On top of that, how this waste is disposed of needs vast improvement. The graphics below shows the breakdown of waste found in household kerbside waste bins per person in 2023.  Click the different bins to see what waste is put in each bin.</p>
+    </header>
+    <div class="waste-generation">
+      <div id="circleChart" ></div>
+
+    </div>
+
+    <nav id="buttonContainer">
+      <button class="button" data-chart="image1">General Waste Bin</button>
+      <button class="button" data-chart="image2">Recycling Bin</button>
+      <button class="button" data-chart="image3">Organic Waste Bin</button>
+      
+    </nav>
+    <div class="chart">
+        <div id="chartContainer" style="width: 20%; height: 1200px;">
+          <img id="chartImage" src="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%;  display: none; max-height: 650px; max-width: 400px;">
+    
+        </div>
+    </div>
+      <div id="divider"></div>
+
+      <div id="imageRow">
+        <div id="barChart1"></div>
+        <div id="barChart2"></div>
+      </div>
+      <div id="divider"></div>
+
+    <footer>
+        <p class="text-block">To change make a difference in these figures, the government must figure out ways to change individual behaviour of its population towards household waste. In this microworld you will take control of a government and attempt to do exactly that, balancing budget and government popularity. </p>
+        <a href="page1.html" class="button-link">How to make a difference →</a>
+    </footer>
+    
+    <script>
+                    function showImage(imageId) {
+                    // Hide all images
+                    document.querySelectorAll('#imageDisplay img').forEach(img => {
+                        img.classList.remove('show');
+                    });
+
+                    // Show the selected image
+                    document.getElementById(imageId).classList.add('show');
+
+                    // Update button active state
+                    document.querySelectorAll('#buttonContainer .button').forEach(button => {
+                        button.classList.remove('active');
+                        if (button.getAttribute('onclick').includes(imageId)) {
+                        button.classList.add('active');
+                        }
+                    });
+                    }
+
+                    // Initialize first image as visible
+                    window.onload = function() {
+                    showImage('image1');
+                    };
+
+
+    </script>
+    
+  </body>
+</html> 

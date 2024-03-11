@@ -1,0 +1,549 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #222222;
+    
+  }
+
+  .nav-bar {
+    width: 100%;
+   
+    font-size: 15px;
+    color: white;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    margin-top: 30px;
+    float: right;
+  }
+  
+
+  .nav-bar ul {
+    list-style: none;
+  }
+
+  .nav-bar ul li {
+    display: inline-block;
+    margin-left: 75px;
+  }
+  .nav-bar ul li:hover {
+    color: rgb(50, 194, 81);
+  }
+
+  .top-link{
+    color: aliceblue;
+    font-size: 60px;
+    text-decoration: none;
+  }
+
+  .top-link.active {
+    color: rgb(50, 194, 81);
+  }
+
+
+
+  .statistics {
+    width: 80%;
+    height: 70px;
+    padding: 20px;
+    position: relative;
+    background-color: #424040;
+    display: flex;
+    color: aliceblue;
+    font-size: 60px;
+    gap:10%;
+    align-items: center;
+    border: 6px solid #898787;
+    
+  }
+
+  
+
+  .bar{
+    width: 50%;
+  }
+
+  .microworld {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    display: flex;
+    gap: 25px;
+  }
+
+
+  .graphs {
+    width: 80%;
+    height: 100%;
+    border: 12px solid #B22222;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 18%;
+    left: 81%;
+  
+  }
+
+  .controls, .goal-box {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 15px;
+    background-color: #424040;
+    border: 6px solid #898787;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    
+    
+    align-items: center; /* Centers children horizontally in a flex column layout */
+    justify-content: center; /
+  }
+
+  .goal-box {
+    width: 100%;
+    color: aliceblue;
+    background-color: #424040;
+    border: 6px solid #898787;
+    font-size: 40px;
+   
+
+  }
+
+  .circleChart {
+    width: 50%;
+    height: 100%;
+  }
+
+  #circleChart {
+    position: relative ;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bingraphs {
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    display: block;
+  }
+  .chart1-container { 
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    justify-content: center;
+    align-items: center; 
+    
+    
+
+}
+  .chart2-container { 
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    justify-content: center;
+    align-items: center; 
+    
+ }
+  .chart3-container { 
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    justify-content: center;
+    align-items: center; 
+    
+ }
+
+ .bar-chart-container {
+    width: 50%;
+    height: 50%;
+    
+    position: absolute;
+    bottom: 0%;
+ }
+  
+ #chart1 {
+    width: 100%;
+    height: 100%;
+ }
+ #chart2 {
+    width: 100%;
+    height: 100%;
+ }
+ #chart3 {
+    width: 100%;
+    height: 100%;
+ }
+ #barChart {
+   
+    width: 100%;
+    height: 100%;
+ }
+
+ .slider-container {
+    margin: 20px;
+    margin-bottom: 70px;
+    width: 100%;
+}
+
+.slider-label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 60px;
+    color:aliceblue;
+}
+
+.bar .pop-label {
+    display: flex;
+    font-size: 60px;
+    color:aliceblue;
+}
+
+.bar {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    gap: 20px; 
+    white-space: nowrap;
+}
+
+.budget {
+  width: 50%;
+}
+
+#reading {
+  font-size: 60px;
+  color: aliceblue;
+  padding-left: 10px;
+  display: flex;
+  text-align: center;
+  color: white;
+  align-items: center;
+}
+
+#goals {
+  font-size: 90px;
+  color: aliceblue;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 10%;
+}
+
+#goal {
+  font-size: 60px;
+  color: aliceblue;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+#next-challenge{
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 3rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.gov-pop {
+    width: 100%;
+    display: flex;
+    background-color: #292B2A;
+    /* Add some padding around the progress bar for visibility */
+     /* Optional: Adds rounded corners to the container */
+    
+     /* Optional: Adds a subtle shadow for depth */
+     border-radius: 8px;
+     align-items: center;
+    
+}
+
+.progress-bar {
+    width: 100%;
+  
+    background-color: #EDC967;
+    text-align: center;
+    color: white;
+    align-items: center;
+    font-size: 4rem;
+    border-radius: 8px;
+    transition: width 0.3s ease;
+    height: 80px; /* Adjust as needed */
+    
+}
+
+#slider1,#slider2,#slider3,#slider4,#slider5 {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    position: relative;
+    
+    width: 75%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  #slider1:hover, #slider2:hover, #slider3:hover, #slider4:hover, #slider5:hover{
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+
+  #slider1::-webkit-slider-thumb, #slider2::-webkit-slider-thumb, #slider3::-webkit-slider-thumb, #slider4::-webkit-slider-thumb, #slider5::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 50px; /* Set a specific slider handle width */
+    height: 50px; /* Slider handle height */
+    border-radius: 50%;
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  #slider1::-moz-range-thumb, #slider2::-moz-range-thumb, #slider3::-moz-range-thumb, #slider4::-moz-range-thumb, #slider5::-moz-range-thumb {
+    width: 50px; /* Set a specific slider handle width */
+    height: 50px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  /* Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+ 
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  opacity: 0; /* Start fully transparent */
+  transition: opacity 0.5s linear; /* Animate the opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This will push the footer to the bottom */
+  align-items: center; /* Center children horizontally */
+  position: relative;
+  background-color: #222222;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Adjust width as needed */
+  height: 50%; /* Adjust height as needed */
+  transition: transform 0.5s ease-out, opacity 0.5s linear;
+  
+  
+}
+
+.modal-footer{
+  position: absolute;
+  bottom: 0px; /* Distance from the bottom of the modal-content */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px; /* Add padding on the sides if needed */
+}
+
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  color: #aaa;
+  float: right;
+  font-size: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev {
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 3rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s; 
+  cursor: pointer;
+}
+
+.next {
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 3rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.begin{
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 3rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #00BF63; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+#helpBtn {
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 4rem;
+  padding: 10px 20px; /* Adds space inside the button */
+  margin: 10px;
+  justify-self: center;
+  border-radius: 50px;
+  background-color: #222222; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 10px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.modal-image1 {
+  max-width: 40%; /* Adjust based on modal size and desired image size */
+  max-height: 100%; /* Maintain aspect ratio */
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+
+}
+
+.images{
+  height: 75%;
+  width: 100%;
+  align-items: center;
+  justify-self: center;
+  display: flex;
+  justify-content: center; /* Center the images */
+  flex-wrap: wrap; /* Allow images to wrap if needed */
+  gap: 10px; /* Space between images */
+}
+
+.modal-text {
+  text-align: center; /* Center the text */
+  margin-bottom: 20px; /* Adjust the space between the text and the ima*/
+  font-size: 60px;
+  color: aliceblue;
+}
+
+
+.images2{
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  
+  display: flex;
+  justify-content: center; /* Center the images */
+
+  gap: 10px; /* Space between images */
+}
+
+
+
+.image1{
+  width: 30%; /* Adjust based on modal size and desired image size */
+  max-height: 20%; /* Maintain aspect ratio */
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+}
+.image2{
+  width: 40%; /* Adjust based on modal size and desired image size */
+
+ 
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+}
+.image3{
+  width: 20%; /* Adjust based on modal size and desired image size */
+
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+}
+.image4{
+  width: 50%; /* Adjust based on modal size and desired image size */
+
+  margin: 10px 2.5%; /* Add some space around images */
+  display: inline-block; /* Display images side by side */
+}
+
+.modal-page{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  gap: 20px; /* Space between items */
+}
+
+.modal-image21{
+  width: 100%;
+}
+.modal-image22{
+  width: 100%;
+}
+.modal-image23{
+  width: 100%;
+}
+
+
+
