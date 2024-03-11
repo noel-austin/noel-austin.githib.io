@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
         series.normal().stroke(null); // Attempt to remove the stroke
     }
 
-    barChart.xAxis().labels().fontSize(30);
-    barChart.yAxis().labels().fontSize(50);
+    barChart.xAxis().labels().fontSize(7.5);
+    barChart.yAxis().labels().fontSize(12.5);
     barChart.barGroupsPadding(0.2);
     barChart.yScale().minimum(0);
     barChart.yScale().maximum(65);
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         markers.stroke(null);
         markers.labels(false);
 
-        markers.size(10); // Adjust size as needed
+        markers.size(3); // Adjust size as needed
 
         budget.textContent = (0 + percentage * 3000000).toLocaleString('en-US');;
         map.draw();
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 { x: "Bring Centre", value: 0 + (13 * (valueX / 100)), fill: "#FFC001" }
             ];
         barChart.data(newData);
-        barChart.xAxis().labels().fontSize(30);
-        barChart.yAxis().labels().fontSize(50);
+        barChart.xAxis().labels().fontSize(7.5);
+        barChart.yAxis().labels().fontSize(12.5);
         barChart.barGroupsPadding(0.2);
         barChart.yScale().minimum(0);
         barChart.yScale().maximum(65);

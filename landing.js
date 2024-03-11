@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             chart.legend(false);
             chart.innerRadius("70%");
             chart.labels().useHtml(true);
-            chart.labels().format("<span style='font-size:11.25px'>{%value}%</span>");
+            chart.labels().format("<span style='font-size:7px'>{%value}%</span>");
             chart.tooltip().titleFormat(function () {
                 return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
             });

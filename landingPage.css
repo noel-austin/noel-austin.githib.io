@@ -1,196 +1,192 @@
 /* Add your CSS here */
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #222222;
-    
-  }
+body {
 
-
-  .page-title {
-    color: white;
-    font-size: 5px;
-    padding-bottom: 2.5px;
-   
-    display: inline-block;
-    margin-bottom: 5px;
-    left: 50%;
-  }
-
-  #buttonContainer {
-    text-align: center;
-    margin-top: 5px;
-  }
-
-  .button {
-    padding: 5px 12.5px;
-    font-size: 0.75rem;
-    margin: 0px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-
-  .button.active {
-    border-color: #4CAF50; /* Border color for active button */
-    background-color: #4CAF50; /* Background color for active button */
-    color: white; /* Text color for active button */
-  }
-
- .waste-generation {
-  position: relative;
-  padding: 5px;
-  width: 50%;
-  height: 450px;
-  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background: #222222;
   
-  justify-content: center;
-  align-items: center;
- }
-
- #circleChart {
-  width: 100%;
-  height: 100%;
- }
-
-
-  .hidden {
-    display: none;
-  }
-
-  #imageDisplay {
-    text-align: center;
-    margin: 5px auto;
-    padding: 5px;
-    
-  /* Ensure the container is large enough to accommodate bigger images */
-   /* Adjust this as needed */
-  }
-
- 
-
-  #imageDisplay img {
-    width: 100%; /* Image will scale to fit its container */
-    max-width: 375px; /* Adjust this value to control the image size */
-    height: auto; /* Maintain aspect ratio */
-    display: none; /* Hide images by default */
-    margin: 0 auto; /* Centers block-level elements horizontally */
-    display: none; /* Hide all images initially */
-  }
-  
-  #imageDisplay img.show {
-    display: block; /* Only show the image with 'show' class */
-  }
-
-  .show {
-    display: block;
-  }
-
-  #divider {
-    width: 40%; /* Adjust the width as needed */
-    height: 0.5px; /* Adjust the thickness of the line */
-    background-color: white;
-    margin: 7.5px auto; /* Centers the line horizontally and adds space above and below */
-  }
-
-  #imageRow {
-    display: flex; /* This makes it a flex container */
-    justify-content: center; /* This centers the images horizontally in the container */
-    align-items: center; /* This centers the images vertically */
-    max-width: 100%;
-    height: 375px;
-    gap: 37.5px; /* This adds space between the images */
-  }
-  
-#barChart1,#barChart2 {
-  height: 70%;
-  width: 20%;
 }
 
-  
-.chart{
-  position: relative;
+
+.page-title {
+  color: white;
+  font-size: 50px;
+  padding-bottom: 2.5px;
+ 
+  display: inline-block;
+  margin-bottom: 5px;
+  left: 50%;
+}
+
+#buttonContainer {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.button {
+  padding: 5px 12.5px;
+  font-size: 0.75rem;
+  margin: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button.active {
+  border-color: #4CAF50; /* Border color for active button */
+  background-color: #4CAF50; /* Background color for active button */
+  color: white; /* Text color for active button */
+}
+
+.waste-generation {
+position: relative;
+padding: 5px;
+width: 50%;
+height: 450px;
+margin: 0 auto;
+
+justify-content: center;
+align-items: center;
+}
+
+#circleChart {
+width: 100%;
+height: 100%;
+}
+
+
+.hidden {
+  display: none;
+}
+
+#imageDisplay {
+  text-align: center;
+  margin: 5px auto;
   padding: 5px;
-  justify-content: center;
-  align-items: center;
   
+/* Ensure the container is large enough to accommodate bigger images */
+ /* Adjust this as needed */
+}
+
+
+
+#imageDisplay img {
+  width: 100%; /* Image will scale to fit its container */
+  max-width: 375px; /* Adjust this value to control the image size */
+  height: auto; /* Maintain aspect ratio */
+  display: none; /* Hide images by default */
+  margin: 0 auto; /* Centers block-level elements horizontally */
+  display: none; /* Hide all images initially */
+}
+
+#imageDisplay img.show {
+  display: block; /* Only show the image with 'show' class */
+}
+
+.show {
+  display: block;
+}
+
+#divider {
+  width: 40%; /* Adjust the width as needed */
+  height: 0.5px; /* Adjust the thickness of the line */
+  background-color: white;
+  margin: 7.5px auto; /* Centers the line horizontally and adds space above and below */
+}
+
+#imageRow {
+  display: flex; /* This makes it a flex container */
+  justify-content: center; /* This centers the images horizontally in the container */
+  align-items: center; /* This centers the images vertically */
+  max-width: 100%;
+  height: 375px;
+  gap: 37.5px; /* This adds space between the images */
+}
+
+#barChart1,#barChart2 {
+height: 80%;
+width: 20%;
+}
+
+
+.chart{
+position: relative;
+padding: 5px;
+justify-content: center;
+align-items: center;
+
 }
 #chartContainer{
-  position: relative;
-  margin: 0 auto;
-  
-  justify-content: center;
-  align-items: center;
+position: relative;
+margin: 0 auto;
+
+justify-content: center;
+align-items: center;
 }
 
 
 #chartImage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 
-  display: none; /* Initially hidden */
+display: none; /* Initially hidden */
 }
 
 
-  p {
-    line-height: 1.6;
-  }
+p {
+  line-height: 1.6;
+}
 
-  .text-block {
-    width: 40%;
-    font-size: 0.75rem;
-    margin: 0 auto;
-    text-align: justify;
-  }
-  
-  header, footer {
-    background-color: #222222;
+.text-block {
+  width: 40%;
+  font-size: 0.75rem;
+  margin: 0 auto;
+  text-align: justify;
+}
 
-    color: white;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  nav ul {
-    color: white;
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 5px;
-  }
-  
-  article {
-    background-color: #222222;
-    margin: 5px 0;
-    padding: 5px;
-  }
+header, footer {
+  background-color: #222222;
 
-  .button-link {
-    display: inline-block; /* Allows the application of padding and margin */
-    font-size: 1rem;
-    padding: 2.5px 5px; /* Adds space inside the button */
-    margin: 25px 0; /* Adds space outside the button, adjust as needed */
-    background-color: #4CAF50; /* Background color of the button */
-    color: white; /* Text color */
-    text-decoration: none; /* Removes underline from link */
-    border-radius: 1.25px; /* Rounds the corners of the button */
-    border: none; /* Removes the border */
-    text-align: center; /* Centers the text */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
-  }
-  
-  .button-link:hover {
-    background-color: #367c39; /* Darker shade for hover effect */
-    color: #fff; /* Text color on hover */
-  }
-  
-  
-  /* You will need to add classes and IDs to your HTML elements to apply specific styles */
-  
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+nav ul {
+  color: white;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 5px;
+}
+
+article {
+  background-color: #222222;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.button-link {
+  display: inline-block; /* Allows the application of padding and margin */
+  font-size: 1rem;
+  padding: 2.5px 5px; /* Adds space inside the button */
+  margin: 25px 0; /* Adds space outside the button, adjust as needed */
+  background-color: #4CAF50; /* Background color of the button */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 1.25px; /* Rounds the corners of the button */
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.button-link:hover {
+  background-color: #367c39; /* Darker shade for hover effect */
+  color: #fff; /* Text color on hover */
+}
+
+
+/* You will need to add classes and IDs to your HTML elements to apply specific styles */

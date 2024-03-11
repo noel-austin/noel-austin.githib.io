@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var sunburstChart = anychart.sunburst(data1, "as-tree");
     sunburstChart.labels().useHtml(true);
-    sunburstChart.labels().format("<span style='font-size:50px'>{%name}<br>{%value}kg</span>");
+    sunburstChart.labels().format("<span style='font-size:12.5px'>{%name}<br>{%value}kg</span>");
     sunburstChart.labels().position("circular");
 
     sunburstChart.selected().fill(sunburstChart.normal().fill());
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
     sunburstChart.tooltip().useHtml(true);
     sunburstChart.tooltip().format(function () {
         // Customize tooltip title and content with HTML, including font size
-        return '<div style="font-size: 4rem; font-weight: bold;">' + this.name + '</div>' +
-            '<div style="font-size: 3rem;">' + this.value + 'kg per person</div>';
+        return '<div style="font-size: 1rem; font-weight: bold;">' + this.name + '</div>' +
+            '<div style="font-size: 0.75rem;">' + this.value + 'kg per person</div>';
     });
 
     // Set the container id for the sunburstChart
@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var barChart2 = anychart.column(data3);
 
     barChart1.title().useHtml(true);
-    barChart1.title("<span style='font-size: 80px;color: #FFFFFF;'>Where is it going?</span><br/><span style='font-size: 34px; color: #FFFFFF;'>Actual segregation of <br/>household kerbside waste</span>");
-    barChart1.xAxis().labels().fontSize(30);
-    barChart1.yAxis().labels().fontSize(50);
+    barChart1.title("<span style='font-size: 20px;color: #FFFFFF;'>Where is it going?</span><br/><span style='font-size: 8.5px; color: #FFFFFF;'>Actual segregation of <br/>household kerbside waste</span>");
+    barChart1.xAxis().labels().fontSize(7.5);
+    barChart1.yAxis().labels().fontSize(12.5);
     barChart1.barGroupsPadding(0.2);
     var series1 = barChart1.getSeriesAt(0);
     series1.normal().stroke(null);
@@ -89,16 +89,16 @@ document.addEventListener('DOMContentLoaded', function () {
     barChart1.tooltip().useHtml(true);
     barChart1.tooltip().format(function () {
         // Customize tooltip title and content with HTML, including font size
-        return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>' +
-            '<div style="font-size: 3rem;">' + this.value + '%</div>';
+        return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
+            '<div style="font-size: 0.75rem;">' + this.value + '%</div>';
     });
     barChart1.draw();
 
     barChart2.title().useHtml(true);
-    barChart2.title("<span style='font-size: 80px;color: #FFFFFF;'>Where should it go?</span><br/><span style='font-size: 34px; color: #FFFFFF;'>If household kerbside waste <br/>was segregated properly</span>");
+    barChart2.title("<span style='font-size: 20px;color: #FFFFFF;'>Where should it go?</span><br/><span style='font-size: 8.5px; color: #FFFFFF;'>If household kerbside waste <br/>was segregated properly</span>");
 
-    barChart2.xAxis().labels().fontSize(30);
-    barChart2.yAxis().labels().fontSize(50);
+    barChart2.xAxis().labels().fontSize(7.5);
+    barChart2.yAxis().labels().fontSize(12.5);
     barChart2.barGroupsPadding(0.2);
     var series2 = barChart2.getSeriesAt(0);
     series2.normal().stroke(null);
@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
     barChart2.tooltip().useHtml(true);
     barChart2.tooltip().format(function () {
         // Customize tooltip title and content with HTML, including font size
-        return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>' +
-            '<div style="font-size: 3rem;">' + this.value + '%</div>';
+        return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
+            '<div style="font-size: 0.75rem;">' + this.value + '%</div>';
     });
     barChart2.draw();
 

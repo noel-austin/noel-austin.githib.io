@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart1.background().fill("#222222");
     chart1.legend(false);
     chart1.labels(false);
+    chart1.tooltip().enabled(false);
 
     chart1.draw();
 
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart2.background().fill("#222222");
     chart2.legend(false);
     chart2.labels(false);
+    chart2.tooltip().enabled(false);
     chart2.draw();
 
     function updateChart() {

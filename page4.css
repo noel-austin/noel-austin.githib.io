@@ -5,25 +5,25 @@ body {
 }
 .title {
   color: white;
-  font-size: 150px;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  font-size: 37.5px;
+  margin-bottom: 2.5px;
+  margin-left: 5px;
 }
 
 .text-block {
   width: 90%;
   float: left;
-  font-size: 3rem;
+  font-size: 0.75rem;
   margin: 0 auto;
   text-align: justify;
 }
 #divider {
   width: 80%; /* Adjust the width as needed */
-  height: 2px; /* Adjust the thickness of the line */
+  height: 0.5px; /* Adjust the thickness of the line */
   float: left;
   
   background-color: white;
-  margin: 30px auto; /* Centers the line horizontally and adds space above and below */
+  margin: 7.5px auto; /* Centers the line horizontally and adds space above and below */
 }
 
 
@@ -46,7 +46,7 @@ body {
     justify-content: center; /* Center the steps */
     align-items: center;
     position: relative; /* Needed for absolute positioning of lines */
-    padding: 20px 0; /* Adjust padding as needed */
+    padding: 5px 0; /* Adjust padding as needed */
 
 }
 
@@ -54,7 +54,7 @@ body {
   grid-area: single-use-plastic; 
   color: white;
   width: 90%;
-  margin-left: 50px;
+  margin-left: 12.5px;
 }
 
 .circle-container { 
@@ -76,8 +76,8 @@ body {
   grid-area: charts; 
   display: flex;
   width: 100%;
-  height: 800px;
-  margin: 100px;
+  height: 200px;
+  margin: 25px;
   width: 100%;
   position: relative;
   align-items: center;
@@ -100,22 +100,22 @@ body {
 }
 
 .tax {
-  padding-bottom: 50px;
+  padding-bottom: 12.5px;
   color: white;
   align-items: center;
-  font-size: 5rem;
+  font-size: 1.25rem;
 }
 
 .bar .pop-label {
   display: block;
-  font-size: 60px;
+  font-size: 15px;
   color:aliceblue;
 }
 
 .bar {
   display: block;
   align-items: center;
-  margin-left: 50px;
+  margin-left: 12.5px;
 }
 
 .gov-pop {
@@ -126,7 +126,7 @@ body {
    /* Optional: Adds rounded corners to the container */
   
    /* Optional: Adds a subtle shadow for depth */
-   border-radius: 8px;
+   border-radius: 2px;
    align-items: center;
   
   
@@ -134,25 +134,25 @@ body {
 
 .progress-bar {
   width: 100%;
-  height: 20px;
+  height: 5px;
   background-color: #4CAF50;
   text-align: center;
   color: white;
   align-items: center;
-  font-size: 4rem;
-  border-radius: 8px;
+  font-size: 1rem;
+  border-radius: 2px;
   transition: width 0.3s ease;
-  height: 100px; /* Adjust as needed */
+  height: 25px; /* Adjust as needed */
   
 }
 
 
 #circle {
-  width: 1200px; /* Initial size */
-  height: 1200px; /* Initial size */
+  width: 300px; /* Initial size */
+  height: 300px; /* Initial size */
  
   background-color: #FF3131;
-  border: 6px solid #FF3131; 
+  border: 1.5px solid #FF3131; 
   stroke: #A6A6A6;
   border-radius: 50%; /* Makes it a circle */
   transition: transform 0.5s; /* Smooth transition for transform */
@@ -161,23 +161,23 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 2em;
+  font-size: 0.5em;
 }
 span#title {
   text-align: center;
 }
 input[type=range] {
-  width: 300px;
-  margin-top: 20px;
+  width: 75px;
+  margin-top: 5px;
 }
 
 #slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   position: relative;
-  top: 100px;
+  top: 25px;
   width: 75%; /* Full-width */
-  height: 25px; /* Specified height */
+  height: 6.25px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -194,16 +194,16 @@ input[type=range] {
 #slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 100px; /* Set a specific slider handle width */
-  height: 100px; /* Slider handle height */
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
   border-radius: 50%;
   background: #04AA6D; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 
 #slider::-moz-range-thumb {
-  width: 50px; /* Set a specific slider handle width */
-  height: 50px; /* Slider handle height */
+  width: 12.5px; /* Set a specific slider handle width */
+  height: 12.5px; /* Slider handle height */
   background: #04AA6D; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
@@ -211,9 +211,9 @@ input[type=range] {
 
 .step {
   background-color: #ddd; /* Non-active step background color */
-  border-radius: 15px; /* Adjusted for rounded corners */
-  padding: 20px 40px; /* Adjusted padding inside each step */
-  margin: 0 100px; /* Increased spacing between steps */
+  border-radius: 3.75px; /* Adjusted for rounded corners */
+  padding: 5px 10px; /* Adjusted padding inside each step */
+  margin: 0 25px; /* Increased spacing between steps */
   text-align: center;
   position: relative; /* Needed for absolute positioning of lines */
 }
@@ -222,10 +222,10 @@ input[type=range] {
   content: '';
   position: absolute;
   top: 50%;
-  right: -200px; /* Adjust based on the space between steps */
-  width: 400px; /* Adjusted to equal the space between steps */
-  height: 1px;
-  border-top: 15px dotted #ccc; /* Increased border size for sparser dots */
+  right: -50px; /* Adjust based on the space between steps */
+  width: 100px; /* Adjusted to equal the space between steps */
+  height: 0.25px;
+  border-top: 3.75px dotted #ccc; /* Increased border size for sparser dots */
   z-index: -1;
   transform: translateY(-50%);
 }
@@ -241,19 +241,19 @@ input[type=range] {
 }
 
 .step-title {
-  font-size: 4em; /* Adjust font size as necessary */
+  font-size: 1em; /* Adjust font size as necessary */
 }
 
 .button-link {
   display: inline-block; /* Allows the application of padding and margin */
-  font-size: 3rem;
-  padding: 10px 20px; /* Adds space inside the button */
-  margin: 100px 0; /* Adds space outside the button, adjust as needed */
-  border-radius: 50px;
+  font-size: 0.75rem;
+  padding: 2.5px 5px; /* Adds space inside the button */
+  margin:25px 0; /* Adds space outside the button, adjust as needed */
+  border-radius: 12.5px;
   background-color: #15A0EF; /* Background color of the button */
   color: white; /* Text color */
   text-decoration: none; /* Removes underline from link */
-  border-radius: 5px; /* Rounds the corners of the button */
+  border-radius: 1.25px; /* Rounds the corners of the button */
   border: none; /* Removes the border */
   text-align: center; /* Centers the text */
   transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
@@ -267,7 +267,7 @@ input[type=range] {
 
 
   .slidecontainer {
-    position: relative; top: 500px;
+    position: relative; top: 125px;
     padding: 10%;
     width: 80%; /* Width of the outside container */
   }
@@ -277,7 +277,7 @@ input[type=range] {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
+    height: 6.25px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -294,16 +294,16 @@ input[type=range] {
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 100px; /* Set a specific slider handle width */
-    height: 100px; /* Slider handle height */
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
     border-radius: 50%;
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
   
   .slider::-moz-range-thumb {
-    width: 50px; /* Set a specific slider handle width */
-    height: 50px; /* Slider handle height */
+    width: 12.5px; /* Set a specific slider handle width */
+    height: 12.5px; /* Slider handle height */
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }

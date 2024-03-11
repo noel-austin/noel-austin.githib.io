@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         label.text("Total Budget: €96,578m");
         label.width("100%");
         label.height("100%");
-        label.fontSize(90);
+        label.fontSize(22.5);
         label.fontColor("#fff");
         label.hAlign("center");
         label.vAlign("middle");
@@ -157,23 +157,23 @@ document.addEventListener('DOMContentLoaded', function () {
         budgetChart.container('budgetGraph');
         //budgetChart.background().fill("#222222");
         budgetChart.legend(true);
-        budgetChart.legend().fontSize("3.5rem");
+        budgetChart.legend().fontSize("0.875rem");
         budgetChart.legend().itemsLayout("vertical"); // Sets the legend items layout to vertical
-        budgetChart.legend().padding(10, 0, 10, 0); // Top, Right, Bottom, Left padding of the legend
+        budgetChart.legend().padding(2.5, 0, 2.5, 0); // Top, Right, Bottom, Left padding of the legend
         budgetChart.legend().margin(0); // Sets the margin around the legend
         budgetChart.legend().position("left");
         budgetChart.legend().fontColor("#fff");
         budgetChart.legend().itemsFormat(function (item) {
             return item.x + ": €" + item.value.toLocaleString('en-US') + "m";
         });
-        budgetChart.legend().iconSize(50);
+        budgetChart.legend().iconSize(12.5);
         budgetChart.labels(false);
         budgetChart.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
         });
         budgetChart.tooltip().useHtml(true);
         budgetChart.tooltip().format(function () {
-            return '<div style="font-size: 4rem;">€' + this.value.toLocaleString('en-US') + 'm</div>';
+            return '<div style="font-size: 1rem;">€' + this.value.toLocaleString('en-US') + 'm</div>';
         });
         budgetChart.background().fill("none");
 
@@ -207,14 +207,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //chart1.background().fill("#222222");
         chart1.legend(false);
         chart1.labels().useHtml(true);
-        chart1.labels().format("<span style='font-size:2.5rem'>{%value}%</span>");
+        chart1.labels().format("<span style='font-size:0.625rem'>{%value}%</span>");
         chart1.background().fill("none");
         chart1.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold; ">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold; ">' + this.x + '</div>'
         });
         chart1.tooltip().useHtml(true);
         chart1.tooltip().format(function () {
-            return '<div style="font-size: 4rem; ">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem; ">' + this.value + '%</div>';
         });
         chart1.draw();
         var sumPieChart1 = anychart.pie(chart1.data());
@@ -223,14 +223,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         sumPieChart1.legend(false);
         sumPieChart1.labels().useHtml(true);
-        sumPieChart1.labels().format("<span style='font-size:3rem'>{%value}%</span>");
+        sumPieChart1.labels().format("<span style='font-size:0.75rem'>{%value}%</span>");
         sumPieChart1.background().fill("none");
         sumPieChart1.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
         });
         sumPieChart1.tooltip().useHtml(true);
         sumPieChart1.tooltip().format(function () {
-            return '<div style="font-size: 4rem;">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem;">' + this.value + '%</div>';
         });
         sumPieChart1.draw();
 
@@ -239,14 +239,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //chart2.background().fill("none");
         chart2.legend(false);
         chart2.labels().useHtml(true);
-        chart2.labels().format("<span style='font-size:2.5rem'>{%value}%</span>");
+        chart2.labels().format("<span style='font-size:0.625rem'>{%value}%</span>");
         chart2.background().fill("none");
         chart2.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
         });
         chart2.tooltip().useHtml(true);
         chart2.tooltip().format(function () {
-            return '<div style="font-size: 4rem;">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem;">' + this.value + '%</div>';
         });
         chart2.draw();
         var sumPieChart2 = anychart.pie(chart2.data());
@@ -255,14 +255,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //sumPieChart2.background().fill("none");
         sumPieChart2.legend(false);
         sumPieChart2.labels().useHtml(true);
-        sumPieChart2.labels().format("<span style='font-size:3rem'>{%value}%</span>");
+        sumPieChart2.labels().format("<span style='font-size:0.75rem'>{%value}%</span>");
         sumPieChart2.background().fill("none");
         sumPieChart2.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
         });
         sumPieChart2.tooltip().useHtml(true);
         sumPieChart2.tooltip().format(function () {
-            return '<div style="font-size: 4rem;">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem;">' + this.value + '%</div>';
         });
         sumPieChart2.draw();
 
@@ -271,14 +271,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //chart3.background().fill("none");
         chart3.legend(false);
         chart3.labels().useHtml(true);
-        chart3.labels().format("<span style='font-size:2.5rem'>{%value}%</span>");
+        chart3.labels().format("<span style='font-size:0.625rem'>{%value}%</span>");
         chart3.background().fill("none");
         chart3.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
         });
         chart3.tooltip().useHtml(true);
         chart3.tooltip().format(function () {
-            return '<div style="font-size: 4rem;">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem;">' + this.value + '%</div>';
         });
         chart3.draw();
         var sumPieChart3 = anychart.pie(chart3.data());
@@ -288,14 +288,14 @@ document.addEventListener('DOMContentLoaded', function () {
         sumPieChart3.legend(false);
 
         sumPieChart3.labels().useHtml(true);
-        sumPieChart3.labels().format("<span style='font-size:3rem; font-color: #fff'>{%value}%</span>");
+        sumPieChart3.labels().format("<span style='font-size:0.75rem; font-color: #fff'>{%value}%</span>");
         sumPieChart3.background().fill("none");
         sumPieChart3.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
         });
         sumPieChart3.tooltip().useHtml(true);
         sumPieChart3.tooltip().format(function () {
-            return '<div style="font-size: 4rem;">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem;">' + this.value + '%</div>';
         });
         sumPieChart3.draw();
 
@@ -313,8 +313,8 @@ document.addEventListener('DOMContentLoaded', function () {
             series.normal().stroke(null); // Attempt to remove the stroke
         }
 
-        barChart.xAxis().labels().fontSize(30);
-        barChart.yAxis().labels().fontSize(50);
+        barChart.xAxis().labels().fontSize(7.5);
+        barChart.yAxis().labels().fontSize(12.5);
         barChart.barGroupsPadding(0.2);
         barChart.yScale().minimum(0);
         barChart.yScale().maximum(65);
@@ -322,27 +322,27 @@ document.addEventListener('DOMContentLoaded', function () {
         barChart.tooltip().useHtml(true);
         barChart.tooltip().format(function () {
             // Customize tooltip title and content with HTML, including font size
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>' +
-                '<div style="font-size: 3rem;">' + this.value.toFixed(0) + '%</div>';
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
+                '<div style="font-size: 0.75rem;">' + this.value.toFixed(0) + '%</div>';
         });
         barChart.container("barChart");
         barChart.background().fill("none");
         var sumBarChart = anychart.column(data);
         sumBarChart.container("sum-bar-chart");
-        sumBarChart.xAxis().labels().fontSize(30);
-        sumBarChart.yAxis().labels().fontSize(50);
+        sumBarChart.xAxis().labels().fontSize(7.5);
+        sumBarChart.yAxis().labels().fontSize(12.5);
         sumBarChart.barGroupsPadding(0.2);
         sumBarChart.yScale().minimum(0);
         sumBarChart.yScale().maximum(65);
         sumBarChart.title().useHtml(true);
-        sumBarChart.title("<span style='font-size: 70px;color: #FFFFFF;'>% of all waste found in each bin</span>");
+        sumBarChart.title("<span style='font-size: 17.5px;color: #FFFFFF;'>% of all waste found in each bin</span>");
 
         sumBarChart.tooltip().titleFormat("");
         sumBarChart.tooltip().useHtml(true);
         sumBarChart.tooltip().format(function () {
             // Customize tooltip title and content with HTML, including font size
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>' +
-                '<div style="font-size: 3rem;">' + this.value.toFixed(0) + '%</div>';
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
+                '<div style="font-size: 0.75rem;">' + this.value.toFixed(0) + '%</div>';
         });
         sumBarChart.background().fill("none");
         var series2 = sumBarChart.getSeriesAt(0); // Get the first series
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var chart = anychart.sunburst(data1, "as-tree");
         chart.labels().useHtml(true);
-        chart.labels().format("<span style='font-size:50px'>{%name}<br>{%value}kg</span>");
+        chart.labels().format("<span style='font-size:12.5px'>{%name}<br>{%value}kg</span>");
         chart.labels().position("circular");
 
         chart.selected().fill(chart.normal().fill());
@@ -413,8 +413,8 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.tooltip().useHtml(true);
         chart.tooltip().format(function () {
             // Customize tooltip title and content with HTML, including font size
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.name + '</div>' +
-                '<div style="font-size: 3rem;">' + this.value + 'kg per person</div>';
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.name + '</div>' +
+                '<div style="font-size: 0.75rem;">' + this.value + 'kg per person</div>';
         });
 
 
@@ -593,7 +593,7 @@ document.addEventListener('DOMContentLoaded', function () {
             updateBar3();
             event.preventDefault();
             endModal.style.opacity = 0;
-            document.querySelector('.end-modal-content').style.transform = 'translateY(-50px)';
+            document.querySelector('.end-modal-content').style.transform = 'translateY(-12.5px)';
             document.querySelector('.end-modal-content').style.opacity = 0;
             endModal.addEventListener('transitionend', function () {
                 endModal.style.display = "none";
@@ -743,15 +743,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     { x: "Bring Centre", value: bringCentreBin.total / totalWaste * 100, fill: "#FFC001" }
                 ];
             barChart.data(newData);
-            barChart.xAxis().labels().fontSize(30);
-            barChart.yAxis().labels().fontSize(50);
+            barChart.xAxis().labels().fontSize(7.5);
+            barChart.yAxis().labels().fontSize(12.5);
             barChart.barGroupsPadding(0.2);
             barChart.yScale().minimum(0);
             barChart.yScale().maximum(65);
 
             sumBarChart.data(newData);
-            sumBarChart.xAxis().labels().fontSize(30);
-            sumBarChart.yAxis().labels().fontSize(50);
+            sumBarChart.xAxis().labels().fontSize(7.5);
+            sumBarChart.yAxis().labels().fontSize(12.5);
             sumBarChart.barGroupsPadding(0.2);
             sumBarChart.yScale().minimum(0);
             sumBarChart.yScale().maximum(65);
@@ -864,7 +864,7 @@ document.querySelectorAll('.next, .prev').forEach(button => {
 document.querySelectorAll('.begin').forEach(button => {
     button.addEventListener('click', function () {
         modal.style.opacity = 0;
-        document.querySelector('.modal-content').style.transform = 'translateY(-50px)';
+        document.querySelector('.modal-content').style.transform = 'translateY(-12.5px)';
         document.querySelector('.modal-content').style.opacity = 0;
         modal.addEventListener('transitionend', function () {
             modal.style.display = "none";
@@ -876,7 +876,7 @@ document.querySelectorAll('.begin').forEach(button => {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.opacity = 0;
-        document.querySelector('.modal-content').style.transform = 'translateY(-50px)';
+        document.querySelector('.modal-content').style.transform = 'translateY(-12.5px)';
         document.querySelector('.modal-content').style.opacity = 0;
         modal.addEventListener('transitionend', function () {
             modal.style.display = "none";

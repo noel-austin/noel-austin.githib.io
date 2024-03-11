@@ -100,14 +100,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //chart1.background().fill("#222222");
         chart1.legend(false);
         chart1.labels().useHtml(true);
-        chart1.labels().format("<span style='font-size:2.5rem'>{%value}%</span>");
+        chart1.labels().format("<span style='font-size:0.625rem'>{%value}%</span>");
         chart1.background().fill("none");
         chart1.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold; ">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold; ">' + this.x + '</div>'
         });
         chart1.tooltip().useHtml(true);
         chart1.tooltip().format(function () {
-            return '<div style="font-size: 4rem; ">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem; ">' + this.value + '%</div>';
         });
         chart1.draw();
 
@@ -116,14 +116,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //chart2.background().fill("none");
         chart2.legend(false);
         chart2.labels().useHtml(true);
-        chart2.labels().format("<span style='font-size:2.5rem'>{%value}%</span>");
+        chart2.labels().format("<span style='font-size:0.625rem'>{%value}%</span>");
         chart2.background().fill("none");
         chart2.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
         });
         chart2.tooltip().useHtml(true);
         chart2.tooltip().format(function () {
-            return '<div style="font-size: 4rem;">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem;">' + this.value + '%</div>';
         });
         chart2.draw();
 
@@ -132,14 +132,14 @@ document.addEventListener('DOMContentLoaded', function () {
         //chart3.background().fill("none");
         chart3.legend(false);
         chart3.labels().useHtml(true);
-        chart3.labels().format("<span style='font-size:2.5rem'>{%value}%</span>");
+        chart3.labels().format("<span style='font-size:0.625rem'>{%value}%</span>");
         chart3.background().fill("none");
         chart3.tooltip().titleFormat(function () {
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>'
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>'
         });
         chart3.tooltip().useHtml(true);
         chart3.tooltip().format(function () {
-            return '<div style="font-size: 4rem;">' + this.value + '%</div>';
+            return '<div style="font-size: 1rem;">' + this.value + '%</div>';
         });
         chart3.draw();
 
@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function () {
             series.normal().stroke(null); // Attempt to remove the stroke
         }
 
-        barChart.xAxis().labels().fontSize(30);
-        barChart.yAxis().labels().fontSize(50);
+        barChart.xAxis().labels().fontSize(7.5);
+        barChart.yAxis().labels().fontSize(12.5);
         barChart.barGroupsPadding(0.2);
         barChart.yScale().minimum(0);
         barChart.yScale().maximum(65);
@@ -166,8 +166,8 @@ document.addEventListener('DOMContentLoaded', function () {
         barChart.tooltip().useHtml(true);
         barChart.tooltip().format(function () {
             // Customize tooltip title and content with HTML, including font size
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.x + '</div>' +
-                '<div style="font-size: 3rem;">' + this.value.toFixed(0) + '%</div>';
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
+                '<div style="font-size: 0.75rem;">' + this.value.toFixed(0) + '%</div>';
         });
         barChart.container("barChart");
         barChart.background().fill("none");
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var chart = anychart.sunburst(data1, "as-tree");
         chart.labels().useHtml(true);
-        chart.labels().format("<span style='font-size:50px'>{%name}<br>{%value}kg</span>");
+        chart.labels().format("<span style='font-size:12.5px'>{%name}<br>{%value}kg</span>");
         chart.labels().position("circular");
 
         chart.selected().fill(chart.normal().fill());
@@ -224,8 +224,8 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.tooltip().useHtml(true);
         chart.tooltip().format(function () {
             // Customize tooltip title and content with HTML, including font size
-            return '<div style="font-size: 4rem; font-weight: bold;">' + this.name + '</div>' +
-                '<div style="font-size: 3rem;">' + this.value + 'kg per person</div>';
+            return '<div style="font-size: 1rem; font-weight: bold;">' + this.name + '</div>' +
+                '<div style="font-size: 0.75rem;">' + this.value + 'kg per person</div>';
         });
 
 
@@ -451,8 +451,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     { x: "Bring Centre", value: bringCentreBin.total / totalWaste * 100, fill: "#FFC001" }
                 ];
             barChart.data(newData);
-            barChart.xAxis().labels().fontSize(30);
-            barChart.yAxis().labels().fontSize(50);
+            barChart.xAxis().labels().fontSize(7.5);
+            barChart.yAxis().labels().fontSize(12.5);
             barChart.barGroupsPadding(0.2);
             barChart.yScale().minimum(0);
             barChart.yScale().maximum(65);

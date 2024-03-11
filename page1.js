@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart1.background().fill("#222222");
     chart1.legend(false);
     chart1.labels(false);
+    chart1.tooltip().enabled(false);
 
     chart1.draw();
 
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart2.background().fill("#222222");
     chart2.legend(false);
     chart2.labels(false);
+    chart2.tooltip().enabled(false);
     chart2.draw();
 
     chart3.innerRadius("70%"); // Makes it a doughnut chart
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart3.background().fill("#222222");
     chart3.legend(false);
     chart3.labels(false);
+    chart3.tooltip().enabled(false);
     chart3.draw();
 
     //var initialSize = 800; // Initial size of the circle
