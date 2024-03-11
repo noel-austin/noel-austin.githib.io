@@ -4,6 +4,15 @@ body {
     background: #222222;
     
   }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 100px; /* Example of adjusting font size for smaller screens */
+    }
+    .text-block, .button, .button-link {
+      font-size: 2rem; /* Adjust font size for readability on smaller screens */
+    }
+  }
   .page-title {
     color: white;
     font-size: 20px;
