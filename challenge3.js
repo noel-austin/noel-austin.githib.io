@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    let recyclingValueElement = document.getElementById('recyclingAndWasteValue');
+    recyclingValueElement.innerText = totalBudget;
+
 
     socialProtectionVariable = document.getElementById('socialValue');
     healthVariable = document.getElementById('healthValue');
@@ -953,7 +956,7 @@ function decrementBudget(categoryId) {
 }
 
 function updateBudget(newBudget) {
-    totalBudget = newBudget * 1000000;
+    totalBudget = (newBudget) * 1000000;
     const allBudget = document.getElementById('allBudget');
     allBudget.textContent = newBudget;
 }

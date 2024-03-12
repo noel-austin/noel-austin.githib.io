@@ -504,6 +504,10 @@ flex-wrap: wrap; /* Allow images to wrap if needed */
 gap: 2.5px; /* Space between images */
 }
 
+.images.page3{
+  height: 70%;
+}
+
 .modal-text {
 text-align: center; /* Center the text */
 margin-bottom: 5px; /* Adjust the space between the text and the ima*/
@@ -549,6 +553,10 @@ width: 50%; /* Adjust based on modal size and desired image size */
 
 margin: 2.5px 2.5%; /* Add some space around images */
 display: inline-block; /* Display images side by side */
+}
+
+.image5{
+  width: 60%;
 }
 
 .modal-page{

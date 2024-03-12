@@ -15,11 +15,31 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('sliderValue5').textContent = this.value;
     });
 
+
+
     var slider1 = document.getElementById('slider1');
     var slider2 = document.getElementById('slider2');
     var slider3 = document.getElementById('slider3');
     var slider4 = document.getElementById('slider4');
     var slider5 = document.getElementById('slider5');
+
+
+    var savedValue1 = localStorage.getItem('sliderValue1');
+    var savedValue2 = localStorage.getItem('sliderValue2');
+    var savedValue3 = localStorage.getItem('sliderValue3');
+    var savedValue4 = localStorage.getItem('sliderValue4');
+    var savedValue5 = localStorage.getItem('sliderValue5');
+    if (savedValue1) {
+        slider1.value = savedValue1;
+        slider2.value = savedValue2;
+        slider3.value = savedValue3;
+        slider4.value = savedValue4;
+        slider5.value = savedValue5;
+    }
+    else {
+        console.log("no saved value");
+    }
+
     var totalWaste;
 
     const budgetSliders = [
@@ -58,6 +78,19 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update displayed values
         totalUsedSpan.textContent = `€${(totalUsedDollars / 1000000).toFixed(0)}`;
         budgetSliders.forEach((slider, i) => budgetValues[i].textContent = `${(Number(slider.value) * unitValue / 1000000).toFixed(0)}m`);
+
+        sliderValueSave1 = slider1.value;
+        sliderValueSave2 = slider2.value;
+        sliderValueSave3 = slider3.value;
+        sliderValueSave4 = slider4.value;
+        sliderValueSave5 = slider5.value;
+        console.log("values are stored");
+        localStorage.setItem('sliderValue1', sliderValueSave1);
+        localStorage.setItem('sliderValue2', sliderValueSave2);
+        localStorage.setItem('sliderValue3', sliderValueSave3);
+        localStorage.setItem('sliderValue4', sliderValueSave4);
+        localStorage.setItem('sliderValue5', sliderValueSave5);
+
 
     }
 
@@ -426,7 +459,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }
 
+
+        var sliderValueSave1
+        var sliderValueSave2
+        var sliderValueSave3
+        var sliderValueSave4
+        var sliderValueSave5
         document.getElementById('next-challenge').addEventListener('click', function (event) {
+
             if (goals != 3) {
                 event.preventDefault();
                 alert("You must complete all 3 goals to move on to the next challenge!");
