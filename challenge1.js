@@ -212,11 +212,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 ]
             }
         ];
+        data1[0].children.forEach(category => {
+            if (category.name === "Bring Centre") {
+                category.children.forEach(child => {
+                    child.isBringCentre = true;
+                });
+            }
+        });
 
         var chart = anychart.sunburst(data1, "as-tree");
         chart.labels().useHtml(true);
-        chart.labels().format("<span style='font-size:12.5px'>{%name}<br>{%value}kg</span>");
-        chart.labels().position("circular");
+        chart.labels().useHtml(true);
+        chart.labels().format(function () {
+            // Directly access the name and value from the function context
+            var name = this.name;
+            var value = this.value.toFixed(0);
+            var color = (name === "Bring Centre" || this.getData('isBringCentre')) ? 'black' : 'white';
+
+            // Construct the HTML string manually with the dynamic data and desired color
+            return `<span style='font-size:12.5px; color: ${color};'>${name}<br>${value}kg</span>`;
+        });
+
 
         chart.selected().fill(chart.normal().fill());
         chart.tooltip().format("{%name}");
@@ -340,8 +356,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal1 = 1;
             }
 
-            genWaste.textContent = `${generalWaste}/35%`;
-            if (generalWaste > 35) {
+            genWaste.textContent = `${generalWaste}/25%`;
+            if (generalWaste > 25) {
                 genWaste.style.color = 'red';
                 goal2 = 0;
             }
@@ -381,7 +397,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
 
-            chart.data([
+            //chart.data([
+            var newSunData = ([
                 {
                     name: "Total Waste Generation", fill: "#8D9196", children: [
                         {
@@ -418,6 +435,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]);
+            newSunData[0].children.forEach(category => {
+                if (category.name === "Bring Centre") {
+                    category.children.forEach(child => {
+                        child.isBringCentre = true;
+                    });
+                }
+            });
+
+            chart.data(newSunData);
 
             chart1.data([
                 { x: "General Waste", value: ((generalWasteBin.genSize / generalWasteBin.total) * 100).toFixed(0), fill: "#545454" },

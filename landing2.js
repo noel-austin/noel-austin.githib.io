@@ -37,9 +37,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
+
+    data1[0].children.forEach(category => {
+        if (category.name === "Bring Centre") {
+            category.children.forEach(child => {
+                child.isBringCentre = true;
+            });
+        }
+    });
     var sunburstChart = anychart.sunburst(data1, "as-tree");
     sunburstChart.labels().useHtml(true);
-    sunburstChart.labels().format("<span style='font-size:12.5px'>{%name}<br>{%value}kg</span>");
+    sunburstChart.labels().useHtml(true);
+    sunburstChart.labels().format(function () {
+        // Directly access the name and value from the function context
+        var name = this.name;
+        var value = this.value;
+        var color = (name === "Bring Centre" || this.getData('isBringCentre')) ? 'black' : 'white';
+
+        // Construct the HTML string manually with the dynamic data and desired color
+        return `<span style='font-size:12.5px; color: ${color};'>${name}<br>${value}kg</span>`;
+    });
+
     sunburstChart.labels().position("circular");
 
     sunburstChart.selected().fill(sunburstChart.normal().fill());

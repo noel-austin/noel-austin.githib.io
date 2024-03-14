@@ -155,7 +155,7 @@ let textilesRatioBase = [0.73, 0.27, 0, 0];
 let weeeRatioBase = [0.5, 0.5, 0, 0];
 let hazardousWasteRatioBase = [0.67, 0.33, 0, 0];
 let glassRatioBase = [0.5, 0.5, 0, 0]
-let contaminationRatioBase = [0.5, 0.5, 0, 0];
+let contaminationRatioBase = [0, 1, 0, 0];
 
 
 

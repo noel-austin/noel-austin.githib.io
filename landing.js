@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Define the data for each chart
         const chartData = {
             'image1': [
-                { x: "General Waste", value: 26, fill: "#545454" },
+                { x: "General Waste", value: 36, fill: "#545454" },
                 { x: "Recyclable Waste", value: 24, fill: "#00BF63" },
-                { x: "Contamination", value: 8, fill: "#FF3131" },
+
                 { x: "Organic Waste", value: 21, fill: "#745D3B" },
                 { x: "Bring Centre Waste", value: 19, fill: "#FFC001" }
             ],
@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 { x: "Bring Centre Waste", value: 8, fill: "#FFC001" }
             ],
             'image3': [
-                { x: "Recyclable Waste", value: 4, fill: "#00BF63" },
-                { x: "General Waste", value: 2, fill: "#545454" },
-                { x: "Organic Waste", value: 93, fill: "#745D3B" },
+                { x: "Recyclable Waste", value: 3, fill: "#00BF63" },
+                { x: "General Waste", value: 1, fill: "#545454" },
+                { x: "Organic Waste", value: 95, fill: "#745D3B" },
                 { x: "Bring Centre Waste", value: 1, fill: "#FFC001" }
             ]
         };
