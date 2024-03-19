@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set the color for the regions
     // Change the background color of the map
     map.background().fill("#222222");
-
+    map.tooltip(false);
     var slider = document.getElementById('slider');
 
 
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     barChart.yScale().maximum(65);
     barChart.container("barChart");
     barChart.background().fill("none");
+    barChart.tooltip(false);
     barChart.draw();
 
     addMarkers(10);

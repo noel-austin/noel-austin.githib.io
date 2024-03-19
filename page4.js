@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var slider = document.getElementById('slider');
     var circle = document.getElementById('circle');
 
-    var initialSize = 500; // Initial size of the circle
+    var initialSize = 500;
     var initialFontSize = 4; // Initial font size in em
 
     var data1 = [
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var chart1 = anychart.pie(data1);
     var chart2 = anychart.pie(data2);
 
-    chart1.innerRadius("70%"); // Makes it a doughnut chart
+    /*chart1.innerRadius("70%"); // Makes it a doughnut chart
     chart1.container('chart1');
     chart1.background().fill("#222222");
     chart1.legend(false);
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart1.tooltip().enabled(false);
 
     chart1.draw();
-
+*/
     chart2.innerRadius("70%"); // Makes it a doughnut chart
     chart2.container('chart2');
     chart2.background().fill("#222222");
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateChart() {
         var averageValue = parseInt(slider.value);
         var max = parseInt(slider.max); // Assuming both sliders have the same max
-        var min = parseInt(slider.min); // Assuming both sliders have the same min
+
         var inverseSize = (max - averageValue);
 
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var sliderValue = parseInt(slider.value);
 
         var max = parseInt(slider.max); // Assuming both sliders have the same max
-        var min = parseInt(slider.min); // Assuming both sliders have the same min
+
         var inverseSize = (max - sliderValue) / 100;
         circle.style.transform = 'scale(' + inverseSize + ')';
 
