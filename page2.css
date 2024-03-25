@@ -81,6 +81,7 @@ font-size: 38px;
 .graph{
   grid-area: graph;
   padding: 12.5px;
+  height: 150%;
   justify-content: center; /* Center the steps */
   align-items: center;
 }
