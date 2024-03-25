@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     let recyclingValueElement = document.getElementById('recyclingAndWasteValue');
-    recyclingValueElement.innerText = totalBudget;
+    recyclingValueElement.innerText = totalBudget / 1000000;
 
 
     socialProtectionVariable = document.getElementById('socialValue');
@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function checkAndUpdateSliders() {
         let totalUsedDollars = budgetSliders.reduce((acc, slider) => acc + (Number(slider.value) * unitValue), 0);
-
+        console.log(totalBudget);
+        console.log(totalUsedDollars);
         // Check if the total dollar amount exceeds the budget
         if (totalUsedDollars > totalBudget) {
             // If so, revert each slider to its last valid value
@@ -143,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { x: "Transport", value: transportAllocation / 1000000 },
             { x: "Justice", value: 3538 },
             { x: "Other", value: 18001 },
-            { x: "Recycling and Waste Budget", value: 0 }
+            { x: "Recycling and Waste Budget", value: totalBudget / 1000000 }
         ]);
         var label = anychart.standalones.label();
         label.text("Total Budget: €96,578m");
@@ -549,8 +550,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal1 = 1;
             }
 
-            genWaste.textContent = `${generalWaste}/35%`;
-            if (generalWaste > 35) {
+            genWaste.textContent = `${generalWaste}/25%`;
+            if (generalWaste > 25) {
                 genWaste.style.color = 'red';
                 goal2 = 0;
             }
@@ -576,9 +577,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var endModal = document.getElementById("endModal");
         var value = document.getElementById('pop-value');
         var finalTotalWaste = document.getElementById("final-waste-gen");
-
+        var finalGoals = document.getElementById("final-goals");
         var finalTax = document.getElementById("final-tax");
         var finalFine = document.getElementById("final-fine");
+        var finalEducationSchools = document.getElementById("final-education-schools");
+        var finalAwareness = document.getElementById("final-awareness");
+        var finalBringCentres = document.getElementById("final-bring-centres");
 
         document.getElementById('next-challenge').addEventListener('click', function (event) {
             for (let x of wasteList) {
@@ -586,27 +590,33 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             finalTax.textContent = `${slider4.value}%`;
             finalFine.textContent = `€${slider5.value} per kg`;
-            finalTotalWaste.textContent = currentTotalWaste.toFixed(2);
+            finalAwareness.textContent = `€${slider1.value * 3}m`;
+            finalEducationSchools.textContent = `€${slider2.value * 3}m`;
+            finalBringCentres.textContent = `€${slider3.value * 3}m`;
+            finalGoals.textContent = `${goals}/3`
+
+
+            finalTotalWaste.textContent = currentTotalWaste.toFixed(0);
             value.textContent = currentPopularity;
             popularity2Value = currentPopularity;
             popularity2.textContent = `${popularity2Value.toFixed(0)}%`;
             popularity2.style.width = `${popularity2Value}%`;
             popularity2.style.backgroundColor = popularity2Value <= 40 ? 'red' : '#4CAF50'; // Change color based on value
             event.preventDefault();
-            if (goals == 3) {
-                // Show the modal if goals are completed
+            //if (goals == 3) {
+            // Show the modal if goals are completed
 
-                endModal.style.display = "block";
-                setTimeout(() => {
-                    endModal.style.opacity = 1;
-                    document.querySelector('.end-modal-content').style.transform = 'translateY(0px)';
-                    document.querySelector('.end-modal-content').style.opacity = 1;
-                    showFirstPage(); // Ensure it starts on the first page
-                }, 10);
-            } else {
-                // Show alert if goals are not completed
-                alert("You must complete all 3 goals to complete the final challenge!");
-            }
+            endModal.style.display = "block";
+            setTimeout(() => {
+                endModal.style.opacity = 1;
+                document.querySelector('.end-modal-content').style.transform = 'translateY(0px)';
+                document.querySelector('.end-modal-content').style.opacity = 1;
+                showFirstPage(); // Ensure it starts on the first page
+            }, 10);
+            // } else {
+            // Show alert if goals are not completed
+            // alert("You must complete all 3 goals to complete the final challenge!");
+            // }
         });
 
         document.getElementById('summarise').addEventListener('click', function (event) {
@@ -982,7 +992,7 @@ function decrementBudget(categoryId) {
 }
 
 function updateBudget(newBudget) {
-    totalBudget = (newBudget) * 1000000;
+    totalBudget = (newBudget * 1000000);
     const allBudget = document.getElementById('allBudget');
     allBudget.textContent = newBudget;
 }

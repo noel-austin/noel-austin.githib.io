@@ -1,7 +1,7 @@
 const minPopularity = 0;
 const minPopularityChallenge2 = 40;
 let totalBudgetChallenge2 = 660000000;
-let totalBudget = 150;
+let totalBudget = 150000000;
 var popularity2;
 var popularity2Value;
 var popularity3;
