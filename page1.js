@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var circle = document.getElementById('circle');
     var budget = document.getElementById('costValue');
     var chart1 = anychart.pie([
-        { x: "Value 1", value: 30 }, // This value will be dynamically updated
+        { x: "Value 1", value: 30 },
         { x: "Value 2", value: 20 },
         { x: "Value 3", value: 20 },
         { x: "Value 4", value: 30 },
@@ -12,20 +12,20 @@ document.addEventListener('DOMContentLoaded', function () {
     ]);
 
     var chart2 = anychart.pie([
-        { x: "Value 1", value: 30 }, // This value will be dynamically updated
+        { x: "Value 1", value: 30 },
         { x: "Value 2", value: 20 },
         { x: "Value 3", value: 20 },
         { x: "Value 4", value: 30 }
     ]);
 
     var chart3 = anychart.pie([
-        { x: "Value 1", value: 30 }, // This value will be dynamically updated
+        { x: "Value 1", value: 30 },
         { x: "Value 2", value: 20 },
         { x: "Value 3", value: 20 }
     ]);
 
-    // Initialize chart
-    chart1.innerRadius("70%"); // Makes it a doughnut chart
+    // Initialize charts
+    chart1.innerRadius("70%");
     chart1.container('chart1');
     chart1.background().fill("#222222");
     chart1.legend(false);
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     chart1.draw();
 
-    chart2.innerRadius("70%"); // Makes it a doughnut chart
+    chart2.innerRadius("70%");
     chart2.container('chart2');
     chart2.background().fill("#222222");
     chart2.legend(false);
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart2.tooltip().enabled(false);
     chart2.draw();
 
-    chart3.innerRadius("70%"); // Makes it a doughnut chart
+    chart3.innerRadius("70%");
     chart3.container('chart3');
     chart3.background().fill("#222222");
     chart3.legend(false);
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart3.draw();
 
     //var initialSize = 800; // Initial size of the circle
-    var initialFontSize = 2; // Initial font size in em
+    var initialFontSize = 2;
     var initialBudget = 0;
 
 
@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function clearTextSelection() {
-        if (window.getSelection) { // All browsers except IE <9
+        if (window.getSelection) {
             window.getSelection().removeAllRanges();
-        } else if (document.selection) { // IE <9
+        } else if (document.selection) {
             document.selection.empty();
         }
     }
@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var value2 = parseInt(slider2.value);
         var averageValue = (value1 + value2) / 2;
 
-        var max = parseInt(slider1.max); // Assuming both sliders have the same max
-        var min = parseInt(slider1.min); // Assuming both sliders have the same min
+        var max = parseInt(slider1.max); // assumesboth sliders have the same max
+
         var inverseSize = (max - averageValue) / 100 + 0.70;
         circle.style.transform = 'scale(' + inverseSize + ')';
 
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slider1.addEventListener('input', updateChart);
     slider2.addEventListener('input', updateChart);
 
-    // Initialize circle size
+    // initialize circle size
     updateCircle();
     updateChart();
 

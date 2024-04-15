@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
     sunburstChart.labels().useHtml(true);
     sunburstChart.labels().useHtml(true);
     sunburstChart.labels().format(function () {
-        // Directly access the name and value from the function context
+
         var name = this.name;
         var value = this.value;
         var color = (name === "Bring Centre" || this.getData('isBringCentre')) ? 'black' : 'white';
 
-        // Construct the HTML string manually with the dynamic data and desired color
+
         return `<span style='font-size:12.5px; color: ${color};'>${name}<br>${value}kg</span>`;
     });
 
@@ -65,26 +65,26 @@ document.addEventListener('DOMContentLoaded', function () {
     sunburstChart.calculationMode("parent-independent");
     sunburstChart.tooltip().useHtml(true);
     sunburstChart.tooltip().format(function () {
-        // Customize tooltip title and content with HTML, including font size
+        // customises tooltip title and content with HTML, including font size
         return '<div style="font-size: 1rem; font-weight: bold;">' + this.name + '</div>' +
             '<div style="font-size: 0.75rem;">' + this.value + 'kg per person</div>';
     });
 
-    // Set the container id for the sunburstChart
+
     sunburstChart.container('circleChart');
     sunburstChart.background().fill("none");
-    // Initialize sunburstChart drawing
+
     sunburstChart.draw();
 
     var data2 = ([
-        { x: "General Waste", value: 59, fill: "#545454" }, // This value will be dynamically updated
+        { x: "General Waste", value: 59, fill: "#545454" },
         { x: "Recycling", value: 23, fill: "#00BF63" },
         { x: "Organic Waste", value: 18, fill: "#745D3B" },
         { x: "Bring Centre", value: 0, fill: "#FFC001" }
     ]);
 
     var data3 = ([
-        { x: "General Waste", value: 18, fill: "#545454" }, // This value will be dynamically updated
+        { x: "General Waste", value: 18, fill: "#545454" },
         { x: "Recycling", value: 30, fill: "#00BF63" },
         { x: "Organic Waste", value: 39, fill: "#745D3B" },
         { x: "Bring Centre", value: 13, fill: "#FFC001" }
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
     barChart1.tooltip().titleFormat("");
     barChart1.tooltip().useHtml(true);
     barChart1.tooltip().format(function () {
-        // Customize tooltip title and content with HTML, including font size
+
         return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
             '<div style="font-size: 0.75rem;">' + this.value + '%</div>';
     });
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     barChart2.tooltip().titleFormat("");
     barChart2.tooltip().useHtml(true);
     barChart2.tooltip().format(function () {
-        // Customize tooltip title and content with HTML, including font size
+
         return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
             '<div style="font-size: 0.75rem;">' + this.value + '%</div>';
     });

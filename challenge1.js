@@ -42,20 +42,20 @@ document.addEventListener('DOMContentLoaded', function () {
     function checkAndUpdateSliders() {
         let totalUsedDollars = budgetSliders.reduce((acc, slider) => acc + (Number(slider.value) * unitValue), 0);
 
-        // Check if the total dollar amount exceeds the budget
+
         if (totalUsedDollars > 999999999999999) {
-            // If so, revert each slider to its last valid value
+
             budgetSliders.forEach((slider, i) => {
                 slider.value = lastValues[i];
             });
-            // Update the displayed total to reflect the last valid total
+
             totalUsedDollars = lastValues.reduce((acc, val) => acc + (val * unitValue), 0);
         } else {
-            // If under budget, update last valid values to current
+
             budgetSliders.forEach((slider, i) => lastValues[i] = Number(slider.value));
         }
 
-        // Update displayed values
+
         totalUsedSpan.textContent = `€${(totalUsedDollars / 1000000).toFixed(0)}m`;
         budgetSliders.forEach((slider, i) => budgetValues[i].textContent = `${(Number(slider.value) * unitValue / 1000000).toFixed(2)}M`);
 
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     anychart.onDocumentReady(function () {
-        // Data for the circle packing chart
+
         createWasteObjects();
         var wasteList = [plasticW, paperW, cardboardW, metalW, nappiesW, finesW, foodW, gardenW, weeeW, textilesW, hazardousW, glassW, contaminationW];
         var binList = [generalWasteBin, recyclingWasteBin, organicWasteBin, bringCentreBin];
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         chart1.draw();
 
-        chart2.innerRadius("70%"); // Makes it a doughnut chart
+        chart2.innerRadius("70%");
         chart2.container('chart2');
         //chart2.background().fill("none");
         chart2.legend(false);
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         chart2.draw();
 
-        chart3.innerRadius("70%"); // Makes it a doughnut chart
+        chart3.innerRadius("70%");
         chart3.container('chart3');
         //chart3.background().fill("none");
         chart3.legend(false);
@@ -145,16 +145,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         var data = ([
-            { x: "General Waste", value: 25, fill: "#545454" }, // This value will be dynamically updated
+            { x: "General Waste", value: 25, fill: "#545454" },
             { x: "Recycling", value: 25, fill: "#00BF63" },
             { x: "Organic Waste", value: 25, fill: "#745D3B" },
             { x: "Bring Centre", value: 25, fill: "#FFC001" }
         ]);
         var barChart = anychart.column(data);
-        // Assuming barChart is your AnyChart column chart instance
-        var series = barChart.getSeriesAt(0); // Get the first series
+
+        var series = barChart.getSeriesAt(0);
         if (series) {
-            series.normal().stroke(null); // Attempt to remove the stroke
+            series.normal().stroke(null);
         }
 
         barChart.xAxis().labels().fontSize(7.5);
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
         barChart.tooltip().titleFormat("");
         barChart.tooltip().useHtml(true);
         barChart.tooltip().format(function () {
-            // Customize tooltip title and content with HTML, including font size
+
             return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
                 '<div style="font-size: 0.75rem;">' + this.value.toFixed(0) + '%</div>';
         });
@@ -224,12 +224,12 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.labels().useHtml(true);
         chart.labels().useHtml(true);
         chart.labels().format(function () {
-            // Directly access the name and value from the function context
+
             var name = this.name;
             var value = this.value.toFixed(0);
             var color = (name === "Bring Centre" || this.getData('isBringCentre')) ? 'black' : 'white';
 
-            // Construct the HTML string manually with the dynamic data and desired color
+
             return `<span style='font-size:12.5px; color: ${color};'>${name}<br>${value}kg</span>`;
         });
 
@@ -239,16 +239,16 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.calculationMode("parent-independent");
         chart.tooltip().useHtml(true);
         chart.tooltip().format(function () {
-            // Customize tooltip title and content with HTML, including font size
+
             return '<div style="font-size: 1rem; font-weight: bold;">' + this.name + '</div>' +
                 '<div style="font-size: 0.75rem;">' + this.value + 'kg per person</div>';
         });
 
 
-        // Set the container id for the chart
+
         chart.container('circleChart');
         chart.background().fill("none");
-        // Initialize chart drawing
+
         chart.draw();
 
         function updateValues() {
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
             gardenW.ratio = adjustArrayValues(gardenWasteRatioBase.slice(), ((value1 + value2) / 200), gardenW.targetBin - 1);
 
             weeeW.ratio = adjustArrayValues(weeeRatioBase.slice(), (value3 / 100), weeeW.targetBin - 1);
-            textilesW.ratio = adjustArrayValues(textilesRatioBase.slice(), (value3 / 100), textilesW.targetBin - 1); ///texytiles cuhhh
+            textilesW.ratio = adjustArrayValues(textilesRatioBase.slice(), (value3 / 100), textilesW.targetBin - 1); ///texytiles  
             hazardousW.ratio = adjustArrayValues(hazardousWasteRatioBase.slice(), (value3 / 100), hazardousW.targetBin - 1);
             glassW.ratio = adjustArrayValues(glassRatioBase.slice(), (value3 / 100), glassW.targetBin - 1);
 
@@ -352,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal1 = 0;
             }
             else {
-                totalGen.style.color = '#4CAF50'; // Default green color
+                totalGen.style.color = '#4CAF50';
                 goal1 = 1;
             }
 
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal2 = 0;
             }
             else {
-                genWaste.style.color = '#4CAF50'; // Default green color
+                genWaste.style.color = '#4CAF50';
                 goal2 = 1;
             }
 
@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal3 = 0;
             }
             else {
-                bringUsage.style.color = '#4CAF50'; // Default green color
+                bringUsage.style.color = '#4CAF50';
                 goal3 = 1;
             }
             goals = goal1 + goal2 + goal3;
@@ -486,9 +486,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function clearTextSelection() {
-            if (window.getSelection) { // All browsers except IE <9
+            if (window.getSelection) {
                 window.getSelection().removeAllRanges();
-            } else if (document.selection) { // IE <9
+            } else if (document.selection) {
                 document.selection.empty();
             }
         }
@@ -512,16 +512,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Get the modal
+
 var modal = document.getElementById("myModal");
 
-// Get the help button
+
 var btn = document.getElementById("helpBtn");
 
-// Get the <span> element that closes the modal
+
 var span = document.getElementsByClassName("close")[0];
 
-// Function to show only the first page of the modal
+
 function showFirstPage() {
     // Hide all pages
     document.querySelectorAll('.modal-page').forEach(page => {
@@ -534,15 +534,15 @@ function showFirstPage() {
 // When the page loads, open the modal on the first page
 window.onload = function () {
     modal.style.display = "block";
-    setTimeout(() => { // Allow for the modal to be displayed before starting the opacity transition
+    setTimeout(() => { // allows for the modal to be displayed before starting the opacity transition
         modal.style.opacity = 1;
         document.querySelector('.modal-content').style.transform = 'translateY(0px)';
         document.querySelector('.modal-content').style.opacity = 1;
-    }, 10); // Short delay to ensure the display: block has taken effect
+    }, 10);
 
 }
 
-// When the user clicks the button, open the modal and ensure it starts on the first page
+
 btn.onclick = function () {
     modal.style.display = "block";
     setTimeout(() => {
@@ -553,17 +553,17 @@ btn.onclick = function () {
     }, 10);
 }
 
-// When the user clicks on <span> (x), close the modal
+
 span.onclick = function () {
     modal.style.opacity = 0;
     document.querySelector('.modal-content').style.transform = 'translateY(-50px)';
     document.querySelector('.modal-content').style.opacity = 0;
     modal.addEventListener('transitionend', function () {
         modal.style.display = "none";
-    }, { once: true }); // Use the { once: true } option to ensure the listener is removed after execution
+    }, { once: true });
 }
 
-// Navigate through modal pages
+
 document.querySelectorAll('.next, .prev').forEach(button => {
     button.addEventListener('click', function () {
         const currentPage = this.closest('.modal-page');
@@ -587,7 +587,7 @@ document.querySelectorAll('.begin').forEach(button => {
     });
 });
 
-// When the user clicks anywhere outside of the modal, close it
+
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.opacity = 0;

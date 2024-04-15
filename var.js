@@ -45,7 +45,7 @@ var totalOrgBin;
 
 
 
-const width = window.innerWidth;
+/*const width = window.innerWidth;
 const height = window.innerHeight;
 let canvasWidth;
 let canvasHeight;
@@ -58,7 +58,7 @@ let box3y = height / 2 + 1500;
 let box4x = width * 0.76;
 let box4y = height / 2 + 1500;
 let boxWidth = width / 5
-let boxHeight = height * 0.47;
+let boxHeight = height * 0.47;*/
 
 
 

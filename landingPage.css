@@ -1,4 +1,4 @@
-/* Add your CSS here */
+ 
 body {
 
   font-family: Arial, sans-serif;
@@ -31,9 +31,9 @@ body {
 }
 
 .button.active {
-  border-color: #4CAF50; /* Border color for active button */
-  background-color: #4CAF50; /* Background color for active button */
-  color: white; /* Text color for active button */
+  border-color: #4CAF50;  
+  background-color: #4CAF50; 
+  color: white; 
 }
 
 .waste-generation {
@@ -62,23 +62,22 @@ height: 100%;
   margin: 5px auto;
   padding: 5px;
   
-/* Ensure the container is large enough to accommodate bigger images */
- /* Adjust this as needed */
+ 
 }
 
 
 
 #imageDisplay img {
-  width: 100%; /* Image will scale to fit its container */
-  max-width: 375px; /* Adjust this value to control the image size */
-  height: auto; /* Maintain aspect ratio */
-  display: none; /* Hide images by default */
-  margin: 0 auto; /* Centers block-level elements horizontally */
-  display: none; /* Hide all images initially */
+  width: 100%;  
+  max-width: 375px;  
+  height: auto;  
+  display: none;  /* hide images b ydefault*/
+  margin: 0 auto;  
+  display: none; 
 }
 
 #imageDisplay img.show {
-  display: block; /* Only show the image with 'show' class */
+  display: block; /* ensure only the image with "show" is shown */
 }
 
 .show {
@@ -86,19 +85,19 @@ height: 100%;
 }
 
 #divider {
-  width: 40%; /* Adjust the width as needed */
-  height: 0.5px; /* Adjust the thickness of the line */
+  width: 40%;  
+  height: 0.5px;  
   background-color: white;
-  margin: 7.5px auto; /* Centers the line horizontally and adds space above and below */
+  margin: 7.5px auto;  
 }
 
 #imageRow {
-  display: flex; /* This makes it a flex container */
-  justify-content: center; /* This centers the images horizontally in the container */
-  align-items: center; /* This centers the images vertically */
+  display: flex;  
+  justify-content: center; 
+  align-items: center;  
   max-width: 100%;
   height: 375px;
-  gap: 37.5px; /* This adds space between the images */
+  gap: 37.5px; 
 }
 
 #barChart1,#barChart2 {
@@ -129,7 +128,7 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 
-display: none; /* Initially hidden */
+display: none; /* initially hidden */
 }
 
 
@@ -170,23 +169,21 @@ article {
 }
 
 .button-link {
-  display: inline-block; /* Allows the application of padding and margin */
+  display: inline-block;  
   font-size: 1rem;
-  padding: 2.5px 5px; /* Adds space inside the button */
-  margin: 25px 0; /* Adds space outside the button, adjust as needed */
-  background-color: #4CAF50; /* Background color of the button */
-  color: white; /* Text color */
-  text-decoration: none; /* Removes underline from link */
-  border-radius: 1.25px; /* Rounds the corners of the button */
-  border: none; /* Removes the border */
-  text-align: center; /* Centers the text */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  padding: 2.5px 5px;  
+  margin: 25px 0;  
+  background-color: #4CAF50;  
+  color: white;  
+  text-decoration: none;  
+  border-radius: 1.25px;  
+  border: none;  
+  text-align: center;  
+  transition: background-color 0.3s, color 0.3s; 
 }
 
 .button-link:hover {
-  background-color: #367c39; /* Darker shade for hover effect */
-  color: #fff; /* Text color on hover */
+  background-color: #367c39;  
+  color: #fff;  
 }
-
-
-/* You will need to add classes and IDs to your HTML elements to apply specific styles */
+ 

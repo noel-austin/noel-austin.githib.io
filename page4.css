@@ -18,12 +18,12 @@ body {
   text-align: justify;
 }
 #divider {
-  width: 80%; /* Adjust the width as needed */
-  height: 0.5px; /* Adjust the thickness of the line */
+  width: 80%;  
+  height: 0.5px; /* adjust the thickness of the line */
   float: left;
   
   background-color: white;
-  margin: 7.5px auto; /* Centers the line horizontally and adds space above and below */
+  margin: 7.5px auto; /* centers the line horizontally and adds space above and below */
 }
 
 
@@ -43,10 +43,10 @@ body {
 .step-indicator { 
   grid-area: step-indicator; 
   display: flex;
-    justify-content: center; /* Center the steps */
+    justify-content: center;  
     align-items: center;
-    position: relative; /* Needed for absolute positioning of lines */
-    padding: 5px 0; /* Adjust padding as needed */
+    position: relative; 
+    padding: 5px 0; 
 
 }
 
@@ -122,10 +122,7 @@ body {
   width: 80%;
   
   background-color: #545454;
-  /* Add some padding around the progress bar for visibility */
-   /* Optional: Adds rounded corners to the container */
-  
-   /* Optional: Adds a subtle shadow for depth */
+
    border-radius: 2px;
    align-items: center;
   
@@ -142,21 +139,21 @@ body {
   font-size: 1rem;
   border-radius: 2px;
   transition: width 0.3s ease;
-  height: 25px; /* Adjust as needed */
+  height: 25px; 
   
 }
 
 
 #circle {
-  width: 300px; /* Initial size */
-  height: 300px; /* Initial size */
+  width: 300px;  
+  height: 300px;  
  
   background-color: #FF3131;
   border: 1.5px solid #FF3131; 
   stroke: #A6A6A6;
-  border-radius: 50%; /* Makes it a circle */
-  transition: transform 0.5s; /* Smooth transition for transform */
-  transform-origin: center; /* Ensures scaling from center */
+  border-radius: 50%;  
+  transition: transform 0.5s;  
+  transform-origin: center;  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,92 +173,92 @@ input[type=range] {
   appearance: none;
   position: relative;
   top: 25px;
-  width: 75%; /* Full-width */
-  height: 6.25px; /* Specified height */
-  background: #d3d3d3; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  width: 75%;
+  height: 6.25px; 
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7; 
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
 }
 
-/* Mouse-over effects */
+ 
 #slider:hover{
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 1; 
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
 #slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
+  width: 25px;  
+  height: 25px;  
   border-radius: 50%;
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  background: #04AA6D; 
+  cursor: pointer; 
 }
 
 #slider::-moz-range-thumb {
-  width: 12.5px; /* Set a specific slider handle width */
-  height: 12.5px; /* Slider handle height */
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 12.5px;  
+  height: 12.5px;  
+  background: #04AA6D; 
+  cursor: pointer; 
 }
 
 
 .step {
-  background-color: #ddd; /* Non-active step background color */
-  border-radius: 3.75px; /* Adjusted for rounded corners */
-  padding: 5px 10px; /* Adjusted padding inside each step */
-  margin: 0 25px; /* Increased spacing between steps */
+  background-color: #ddd;  
+  border-radius: 3.75px;  
+  padding: 5px 10px;  
+  margin: 0 25px; 
   text-align: center;
-  position: relative; /* Needed for absolute positioning of lines */
+  position: relative; 
 }
 
 .step:not(:last-child):not(:nth-last-child(2))::after {
   content: '';
   position: absolute;
   top: 50%;
-  right: -50px; /* Adjust based on the space between steps */
-  width: 100px; /* Adjusted to equal the space between steps */
+  right: -50px; 
+  width: 100px; 
   height: 0.25px;
-  border-top: 3.75px dotted #ccc; /* Increased border size for sparser dots */
+  border-top: 3.75px dotted #ccc;  
   z-index: -1;
   transform: translateY(-50%);
 }
-
+ /*different colors for different steps*/
 .step.active {
-  background-color: #4CAF50; /* Active step background color */
-  color: white; /* Active step text color */
+  background-color: #4CAF50;  
+  color: white; 
 }
 
 .step.prev {
-  background-color: #307033; /* Active step background color */
-  color: #B4AEAE; /* Active step text color */
+  background-color: #307033;  
+  color: #B4AEAE;
 }
 
 .step-title {
-  font-size: 1em; /* Adjust font size as necessary */
+  font-size: 1em; 
 }
 
 .button-link {
-  display: inline-block; /* Allows the application of padding and margin */
+  display: inline-block;  
   font-size: 0.75rem;
-  padding: 2.5px 5px; /* Adds space inside the button */
-  margin:25px 0; /* Adds space outside the button, adjust as needed */
+  padding: 2.5px 5px; 
+  margin:25px 0;  
   border-radius: 12.5px;
-  background-color: #15A0EF; /* Background color of the button */
-  color: white; /* Text color */
-  text-decoration: none; /* Removes underline from link */
-  border-radius: 1.25px; /* Rounds the corners of the button */
-  border: none; /* Removes the border */
-  text-align: center; /* Centers the text */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  background-color: #15A0EF; 
+  color: white; 
+  text-decoration: none;
+  border-radius: 1.25px; 
+  border: none; 
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; 
 }
 
 .button-link:hover {
-  background-color: #0D6FA6; /* Darker shade for hover effect */
-  color: #fff; /* Text color on hover */
+  background-color: #0D6FA6; 
+  color: #fff; 
 }
 
 
@@ -269,43 +266,43 @@ input[type=range] {
   .slidecontainer {
     position: relative; top: 125px;
     padding: 10%;
-    width: 80%; /* Width of the outside container */
+    width: 80%; 
   }
   
-  /* The slider itself */
+  
   .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none; 
     appearance: none;
-    width: 100%; /* Full-width */
-    height: 6.25px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    width: 100%; 
+    height: 6.25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7; 
+    -webkit-transition: .2s;
     transition: opacity .2s;
   }
   
-  /* Mouse-over effects */
+  /* mouse-over effect  */
   .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
+    opacity: 1; 
   }
   
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+ 
   .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none; 
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
+    width: 25px; 
+    height: 25px; 
     border-radius: 50%;
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    background: #04AA6D; 
+    cursor: pointer; 
   }
   
   .slider::-moz-range-thumb {
-    width: 12.5px; /* Set a specific slider handle width */
-    height: 12.5px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 12.5px; 
+    height: 12.5px; 
+    background: #04AA6D; 
+    cursor: pointer; 
   }
   
   

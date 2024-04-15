@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Define the showChart function
+
     function showChart(chartId) {
-        // Define the data for each chart
+        // define the data for each chart
         const chartData = {
             'image1': [
                 { x: "General Waste", value: 36, fill: "#545454" },
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        // Clear the chart container
+
         const chartContainer = document.getElementById('chartContainer');
         chartContainer.innerHTML = '<img id="chartImage" src="" alt="Chart Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30%;  display: none; max-height: 162.5px; max-width: 100px;">';
 
-        // Create a chart based on the chartId
+
         anychart.onDocumentReady(function () {
             const chart = anychart.pie(chartData[chartId]);
             chart.legend(false);
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Attach click event listeners to buttons
+
     document.querySelectorAll('#buttonContainer .button').forEach(button => {
         button.addEventListener('click', function () {
             const chartId = this.getAttribute('data-chart');
@@ -78,6 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Display the default chart
+    // general waste bin as default
     showChart('image1');
 });

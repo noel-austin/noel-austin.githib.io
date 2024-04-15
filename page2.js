@@ -1,39 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
     var map = anychart.map();
-
-
     var budget = document.getElementById('costValue');
-    // Load and set the geographical data for Ireland
     map.geoData(anychart.maps.ireland);
     map.unboundRegions().enabled(true);
     map.unboundRegions().fill("#606060");
-
-    // Set the color for the regions
-    // Change the background color of the map
     map.background().fill("#222222");
     map.tooltip(false);
     var slider = document.getElementById('slider');
-
-
-    // Set the container id
     map.container('mapContainer');
-
-    // Draw the map
     map.draw();
-
     var data = ([
-        { x: "General Waste", value: 25, fill: "#545454" }, // This value will be dynamically updated
+        { x: "General Waste", value: 25, fill: "#545454" },
         { x: "Recycling", value: 25, fill: "#00BF63" },
         { x: "Organic Waste", value: 25, fill: "#745D3B" },
         { x: "Bring Centre", value: 25, fill: "#FFC001" }
     ]);
     var barChart = anychart.column(data);
-    // Assuming barChart is your AnyChart column chart instance
-    var series = barChart.getSeriesAt(0); // Get the first series
+    var series = barChart.getSeriesAt(0);
     if (series) {
-        series.normal().stroke(null); // Attempt to remove the stroke
+        series.normal().stroke(null);
     }
-
     barChart.xAxis().labels().fontSize(7.5);
     barChart.yAxis().labels().fontSize(12.5);
     barChart.barGroupsPadding(0.2);
@@ -43,37 +29,28 @@ document.addEventListener('DOMContentLoaded', function () {
     barChart.background().fill("none");
     barChart.tooltip(false);
     barChart.draw();
-
     addMarkers(10);
-
     function addMarkers() {
-        // Clear existing markers if necessary
         map.removeAllSeries();
         var percentage = slider.value;
         var dataSet = anychart.data.set();
-
         var numOfDots = Math.round(allBringCentres.length * (percentage / 100));
         var selectedData = allBringCentres.slice(0, numOfDots);
         dataSet.data(selectedData);
-
         var markers = map.marker(dataSet);
         markers.fill("#FFC001");
         markers.stroke(null);
         markers.labels(false);
-
-        markers.size(3); // Adjust size as needed
-
+        markers.size(3);
         budget.textContent = (0 + percentage * 3000000).toLocaleString('en-US');;
         map.draw();
         updateChart();
     }
-
     function updateChart() {
-
         var valueX = slider.value;
         let newData =
             [
-                { x: "General Waste", value: 59 - (13 * (valueX / 100)), fill: "#545454" }, // This value will be dynamically updated
+                { x: "General Waste", value: 59 - (13 * (valueX / 100)), fill: "#545454" },
                 { x: "Recycling", value: 23 - (5 * (valueX / 100)), fill: "#00BF63" },
                 { x: "Organic Waste", value: 18 - (3 * (valueX / 100)), fill: "#745D3B" },
                 { x: "Bring Centre", value: 0 + (13 * (valueX / 100)), fill: "#FFC001" }
@@ -86,37 +63,18 @@ document.addEventListener('DOMContentLoaded', function () {
         barChart.yScale().maximum(65);
     }
     function clearTextSelection() {
-        if (window.getSelection) { // All browsers except IE <9
+        if (window.getSelection) {
             window.getSelection().removeAllRanges();
-        } else if (document.selection) { // IE <9
+        } else if (document.selection) {
             document.selection.empty();
         }
     }
-
     slider.addEventListener('mousedown', clearTextSelection);
     slider.addEventListener('input', addMarkers);
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//all the points for the map
 var allBringCentres = [
-    { lat: 53.383, long: -6.416 }, // Example coordinates
+    { lat: 53.383, long: -6.416 },
     { lat: 53.357, long: -7.690 },
     { lat: 53.041, long: -8.173 },
     { lat: 52.281, long: -8.107 },
@@ -210,5 +168,4 @@ var allBringCentres = [
     { lat: 54.0212, long: -7.9926 },
     { lat: 53.1560, long: -8.8471 },
     { lat: 54.110, long: -9.1455 }
-
 ];

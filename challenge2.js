@@ -62,20 +62,20 @@ document.addEventListener('DOMContentLoaded', function () {
     function checkAndUpdateSliders() {
         let totalUsedDollars = budgetSliders.reduce((acc, slider) => acc + (Number(slider.value) * unitValue), 0);
 
-        // Check if the total dollar amount exceeds the budget
+        // check if it exceeds the last valid amount
         if (totalUsedDollars > totalBudgetChallenge2) {
-            // If so, revert each slider to its last valid value
+            // revert each slider to its last valid value
             budgetSliders.forEach((slider, i) => {
                 slider.value = lastValues[i];
             });
-            // Update the displayed total to reflect the last valid total
+            // update displayed total to equal last value
             totalUsedDollars = lastValues.reduce((acc, val) => acc + (val * unitValue), 0);
         } else {
-            // If under budget, update last valid values to current
+            //under budget => update last valid values to current
             budgetSliders.forEach((slider, i) => lastValues[i] = Number(slider.value));
         }
 
-        // Update displayed values
+        // update html values
         totalUsedSpan.textContent = `€${(totalUsedDollars / 1000000).toFixed(0)}`;
         budgetSliders.forEach((slider, i) => budgetValues[i].textContent = `${(Number(slider.value) * unitValue / 1000000).toFixed(0)}m`);
 
@@ -104,10 +104,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function updatePopularity() {
-        // Calculate total decrease, with special handling for the mapped slider
+        // calculate total decrease 
         let totalDecrease = popularitySliders.reduce((acc, slider, index) => {
             let sliderValue = Number(slider.value);
-            // If the slider is the one with a 0-30 range, map its value to 0-100
+            // index = 0 for tax slider
             if (index === 0) {
                 sliderValue = (sliderValue / 30) * 100; // Map 0-30 to 0-100
             }
@@ -115,11 +115,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 0);
 
         if (totalDecrease > maxPopularityDecrease) {
-            // Revert slider values if the total decrease exceeds the maximum allowed
+            // revert slider values if the total decrease exceeds the maximum allowed
             popularitySliders.forEach((slider, index) => {
                 slider.value = popLastValues[index];
             });
-            // Recalculate total decrease using reverted (and properly mapped) values
+            // recalculate total decrease using reverted   values
             totalDecrease = popLastValues.reduce((acc, value, index) => {
                 let adjustedValue = value;
                 if (index === 0) {
@@ -128,13 +128,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 return acc + adjustedValue * popUnitValue;
             }, 0);
         } else {
-            // Update last valid values to current
+            // update last valid values to current
             popularitySliders.forEach((slider, index) => {
                 popLastValues[index] = Number(slider.value);
             });
         }
 
-        // Ensure currentPopularity does not exceed the base minus the maximum allowed decrease
+        // ensure currentPopularity does not exceed the base minus the maximum allowed decrease
         currentPopularity = Math.max(basePopularity - totalDecrease, basePopularity - maxPopularityDecrease);
 
         // Update the visual representation of popularity
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     anychart.onDocumentReady(function () {
-        // Data for the circle packing chart
+
         createWasteObjects();
         var wasteList = [plasticW, paperW, cardboardW, metalW, nappiesW, finesW, foodW, gardenW, weeeW, textilesW, hazardousW, glassW, contaminationW];
         var binList = [generalWasteBin, recyclingWasteBin, organicWasteBin, bringCentreBin];
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         chart1.draw();
 
-        chart2.innerRadius("70%"); // Makes it a doughnut chart
+        chart2.innerRadius("70%");
         chart2.container('chart2');
         //chart2.background().fill("none");
         chart2.legend(false);
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         chart2.draw();
 
-        chart3.innerRadius("70%"); // Makes it a doughnut chart
+        chart3.innerRadius("70%");
         chart3.container('chart3');
         //chart3.background().fill("none");
         chart3.legend(false);
@@ -231,16 +231,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         var data = ([
-            { x: "General Waste", value: 25, fill: "#545454" }, // This value will be dynamically updated
+            { x: "General Waste", value: 25, fill: "#545454" },
             { x: "Recycling", value: 25, fill: "#00BF63" },
             { x: "Organic Waste", value: 25, fill: "#745D3B" },
             { x: "Bring Centre", value: 25, fill: "#FFC001" }
         ]);
         var barChart = anychart.column(data);
-        // Assuming barChart is your AnyChart column chart instance
-        var series = barChart.getSeriesAt(0); // Get the first series
+
+        var series = barChart.getSeriesAt(0); // get the first series
         if (series) {
-            series.normal().stroke(null); // Attempt to remove the stroke
+            series.normal().stroke(null); // removes the outline of bar cahrt
         }
 
         barChart.xAxis().labels().fontSize(7.5);
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
         barChart.tooltip().titleFormat("");
         barChart.tooltip().useHtml(true);
         barChart.tooltip().format(function () {
-            // Customize tooltip title and content with HTML, including font size
+
             return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
                 '<div style="font-size: 0.75rem;">' + this.value.toFixed(0) + '%</div>';
         });
@@ -320,12 +320,12 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.labels().useHtml(true);
         chart.labels().useHtml(true);
         chart.labels().format(function () {
-            // Directly access the name and value from the function context
+
             var name = this.name;
             var value = this.value.toFixed(0);
             var color = (name === "Bring Centre" || this.getData('isBringCentre')) ? 'black' : 'white';
+            //makes the bring centre font black
 
-            // Construct the HTML string manually with the dynamic data and desired color
             return `<span style='font-size:12.5px; color: ${color};'>${name}<br>${value}kg</span>`;
         });
         chart.labels().position("circular");
@@ -335,16 +335,16 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.calculationMode("parent-independent");
         chart.tooltip().useHtml(true);
         chart.tooltip().format(function () {
-            // Customize tooltip title and content with HTML, including font size
+
             return '<div style="font-size: 1rem; font-weight: bold;">' + this.name + '</div>' +
                 '<div style="font-size: 0.75rem;">' + this.value + 'kg per person</div>';
         });
 
 
-        // Set the container id for the chart
+
         chart.container('circleChart');
         chart.background().fill("none");
-        // Initialize chart drawing
+
         chart.draw();
 
         function updateValues() {
@@ -446,7 +446,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal1 = 0;
             }
             else {
-                totalGen.style.color = '#4CAF50'; // Default green color
+                totalGen.style.color = '#4CAF50';
                 goal1 = 1;
             }
 
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal2 = 0;
             }
             else {
-                genWaste.style.color = '#4CAF50'; // Default green color
+                genWaste.style.color = '#4CAF50';
                 goal2 = 1;
             }
 
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal3 = 0;
             }
             else {
-                bringUsage.style.color = '#4CAF50'; // Default green color
+                bringUsage.style.color = '#4CAF50';
                 goal3 = 1;
             }
             goals = goal1 + goal2 + goal3;
@@ -476,11 +476,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
 
-        var sliderValueSave1
-        var sliderValueSave2
-        var sliderValueSave3
-        var sliderValueSave4
-        var sliderValueSave5
+        /*  var sliderValueSave1
+          var sliderValueSave2
+          var sliderValueSave3
+          var sliderValueSave4
+          var sliderValueSave5*/
         document.getElementById('next-challenge').addEventListener('click', function (event) {
 
             if (goals != 3) {
@@ -585,9 +585,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function clearTextSelection() {
-            if (window.getSelection) { // All browsers except IE <9
+            if (window.getSelection) {
                 window.getSelection().removeAllRanges();
-            } else if (document.selection) { // IE <9
+            } else if (document.selection) {
                 document.selection.empty();
             }
         }
@@ -611,58 +611,58 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Get the modal
+
 var modal = document.getElementById("myModal");
 
-// Get the help button
+
 var btn = document.getElementById("helpBtn");
 
-// Get the <span> element that closes the modal
+
 var span = document.getElementsByClassName("close")[0];
 
-// Function to show only the first page of the modal
+// function to show only the first page of the modal
 function showFirstPage() {
-    // Hide all pages
+
     document.querySelectorAll('.modal-page').forEach(page => {
-        page.style.display = 'none';
+        page.style.display = 'none'; // hides all pagess
     });
     // Show only the first page
     document.querySelector('.modal-page[data-page="1"]').style.display = 'block';
 }
 
-// When the page loads, open the modal on the first page
+
 window.onload = function () {
     modal.style.display = "block";
-    setTimeout(() => { // Allow for the modal to be displayed before starting the opacity transition
+    setTimeout(() => {
         modal.style.opacity = 1;
         document.querySelector('.modal-content').style.transform = 'translateY(0px)';
         document.querySelector('.modal-content').style.opacity = 1;
-    }, 10); // Short delay to ensure the display: block has taken effect
+    }, 10); //open on firts page
 
 }
 
-// When the user clicks the button, open the modal and ensure it starts on the first page
+//open modal
 btn.onclick = function () {
     modal.style.display = "block";
     setTimeout(() => {
         modal.style.opacity = 1;
         document.querySelector('.modal-content').style.transform = 'translateY(0px)';
         document.querySelector('.modal-content').style.opacity = 1;
-        showFirstPage(); // Ensure it starts on the first page
+        showFirstPage();
     }, 10);
 }
 
-// When the user clicks on <span> (x), close the modal
+//close modal
 span.onclick = function () {
     modal.style.opacity = 0;
     document.querySelector('.modal-content').style.transform = 'translateY(-50px)';
     document.querySelector('.modal-content').style.opacity = 0;
     modal.addEventListener('transitionend', function () {
         modal.style.display = "none";
-    }, { once: true }); // Use the { once: true } option to ensure the listener is removed after execution
+    }, { once: true }); //removes listener
 }
 
-// Navigate through modal pages
+// navigate through modal pages
 document.querySelectorAll('.next, .prev').forEach(button => {
     button.addEventListener('click', function () {
         const currentPage = this.closest('.modal-page');
@@ -686,7 +686,7 @@ document.querySelectorAll('.begin').forEach(button => {
     });
 });
 
-// When the user clicks anywhere outside of the modal, close it
+// when the user clicks anywhere outside of the modal it closes
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.opacity = 0;

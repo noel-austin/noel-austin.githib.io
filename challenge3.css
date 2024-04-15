@@ -1,3 +1,6 @@
+/* provides the layout for all three pages*/
+
+
 body {
   font-family: Arial, sans-serif;
   background: #222222;
@@ -56,18 +59,18 @@ body {
 }
 
 .edit-budget{
-  display: inline-block; /* Allows the application of padding and margin */
+  display: inline-block;  
   font-size: 1.25rem;
-  padding: 2.5px 5px; /* Adds space inside the button */
+  padding: 2.5px 5px;  
   margin: 2.5px;
   justify-self: center;
   border-radius: 12.5px;
-  background-color: #00BF63; /* Background color of the button */
-  color: white; /* Text color */
-  text-decoration: none; /* Removes underline from link */
-  border-radius: 2.5px; /* Rounds the corners of the button */
-  border: none; /* Removes the border */
-  text-align: center; /* Centers the text */
+  background-color: #00BF63;  
+  color: white;  
+  text-decoration: none;  
+  border-radius: 2.5px;  
+  border: none; 
+  text-align: center;  
   cursor: pointer;
  
 }
@@ -116,7 +119,7 @@ body {
   border-radius: 5px;
   
   
-  align-items: center; /* Centers children horizontally in a flex column layout */
+  align-items: center;  
   justify-content: center; /
 }
 
@@ -271,19 +274,19 @@ color: white;
 
 
 #next-challenge{
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 font-size: 0.75rem;
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 justify-self: center;
 border-radius: 12.5px;
-background-color: #00BF63; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
-transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+background-color: #00BF63;  
+color: white;  
+text-decoration: none; 
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
+transition: background-color 0.3s, color 0.3s;  
 cursor: pointer;
 }
 
@@ -291,10 +294,7 @@ cursor: pointer;
   width: 100%;
   display: flex;
   background-color: #292B2A;
-  /* Add some padding around the progress bar for visibility */
-   /* Optional: Adds rounded corners to the container */
   
-   /* Optional: Adds a subtle shadow for depth */
    border-radius: 2px;
    align-items: center;
    font-size: 1.25rem;
@@ -311,8 +311,7 @@ cursor: pointer;
   font-size: 1rem;
   border-radius: 2px;
   transition: width 0.3s ease;
-  height: 20px; /* Adjust as needed */
-  
+  height: 20px; 
 }
 
 .progress-bar.golden {
@@ -320,68 +319,68 @@ background-color: #EDC967
 }
 
 #slider1,#slider2,#slider3,#slider4,#slider5 {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;   
   appearance: none;
   position: relative;
   
-  width: 75%; /* Full-width */
-  height: 3.75px; /* Specified height */
-  background: #d3d3d3; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  width: 75%;  
+  height: 3.75px;  
+  background: #d3d3d3;  
+  outline: none;  
+  opacity: 0.7; /* set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
 }
 #slider1:hover, #slider2:hover, #slider3:hover, #slider4:hover, #slider5:hover{
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 1;  
 }
 
 #slider1::-webkit-slider-thumb, #slider2::-webkit-slider-thumb, #slider3::-webkit-slider-thumb, #slider4::-webkit-slider-thumb, #slider5::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;  
   appearance: none;
-  width: 12.5px; /* Set a specific slider handle width */
-  height: 12.5px; /* Slider handle height */
+  width: 12.5px;  
+  height: 12.5px; /* slider handle height and width */
   border-radius: 50%;
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  background: #04AA6D;  
+  cursor: pointer;  
 }
 
 #slider1::-moz-range-thumb, #slider2::-moz-range-thumb, #slider3::-moz-range-thumb, #slider4::-moz-range-thumb, #slider5::-moz-range-thumb {
-  width: 12.5px; /* Set a specific slider handle width */
-  height: 12.5px; /* Slider handle height */
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 12.5px;  
+  height: 12.5px;  
+  background: #04AA6D; 
+  cursor: pointer;  
 }
 
 /* Modal (background) */
 .modal, .endModal, .summaryModal {
 display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
+position: fixed;  
+z-index: 1; /* Sit on top of everythign else */
 left: 0;
 top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
+width: 100%;  
+height: 100%;  
 
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+background-color: rgb(0,0,0);  
+background-color: rgba(0,0,0,0.4); 
 opacity: 0; /* Start fully transparent */
-transition: opacity 0.5s linear; /* Animate the opacity */
+transition: opacity 0.5s linear;  
 }
 
 /* Modal Content */
 .modal-content {
 display: flex;
 flex-direction: column;
-justify-content: space-between; /* This will push the footer to the bottom */
-align-items: center; /* Center children horizontally */
+justify-content: space-between;  
+align-items: center;  
 position: relative;
 background-color: #222222;
 margin: 15% auto;
 padding: 5px;
 border: 0.25px solid #888;
-width: 50%; /* Adjust width as needed */
-height: 50%; /* Adjust height as needed */
+width: 50%;  
+height: 50%;  
 transition: transform 0.5s ease-out, opacity 0.5s linear;
 }
 
@@ -389,20 +388,20 @@ transition: transform 0.5s ease-out, opacity 0.5s linear;
 
 .modal-footer{
 position: absolute;
-bottom: 0px; /* Distance from the bottom of the modal-content */
+bottom: 0px;  
 left: 0;
 right: 0;
 display: flex;
 justify-content: space-between;
-padding: 0 5px; /* Add padding on the sides if needed */
+padding: 0 5px;  
 }
 
 
-/* The Close Button */
+ 
 .close {
 position: absolute;
-top: 2.5px; /* Adjust as needed */
-right: 2.5px; /* Adjust as needed */
+top: 2.5px; 
+right: 2.5px; 
 color: #aaa;
 float: right;
 font-size: 25px;
@@ -418,78 +417,78 @@ cursor: pointer;
 }
 
 .prev {
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 font-size: 0.75rem;
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 justify-self: center;
 border-radius: 12.5px;
-background-color: #00BF63; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #00BF63;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s; 
 cursor: pointer;
 }
 
 .next {
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 font-size: 0.75rem;
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 justify-self: center;
 border-radius: 12.5px;
-background-color: #00BF63; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #00BF63;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s;
 cursor: pointer;
 }
 
 .begin{
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 font-size: 0.75rem;
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 justify-self: center;
 border-radius: 12.5px;
-background-color: #00BF63; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #00BF63;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s;
 cursor: pointer;
 }
 
 #helpBtn {
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 font-size: 1rem;
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 justify-self: center;
 border-radius: 12.5px;
-background-color: #222222; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #222222;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s;
 cursor: pointer;
 }
 
 .modal-image1 {
-max-width: 40%; /* Adjust based on modal size and desired image size */
-max-height: 100%; /* Maintain aspect ratio */
-margin: 2.5px 2.5%; /* Add some space around images */
-display: inline-block; /* Display images side by side */
+max-width: 40%;  /*modal size*/
+max-height: 100%;  
+margin: 2.5px 2.5%;  
+display: inline-block;  
 
 }
 
@@ -499,9 +498,9 @@ width: 100%;
 align-items: center;
 justify-self: center;
 display: flex;
-justify-content: center; /* Center the images */
-flex-wrap: wrap; /* Allow images to wrap if needed */
-gap: 2.5px; /* Space between images */
+justify-content: center;  
+flex-wrap: wrap;  
+gap: 2.5px;  
 }
 
 .images.page3{
@@ -509,8 +508,8 @@ gap: 2.5px; /* Space between images */
 }
 
 .modal-text {
-text-align: center; /* Center the text */
-margin-bottom: 5px; /* Adjust the space between the text and the ima*/
+text-align: center;  
+margin-bottom: 5px;  
 font-size: 15px;
 color: aliceblue;
 }
@@ -522,37 +521,37 @@ width: 100%;
 align-items: center;
 
 display: flex;
-justify-content: center; /* Center the images */
+justify-content: center; 
 
-gap: 2.5px; /* Space between images */
+gap: 2.5px;  
 }
 
 
 
 .image1{
-width: 30%; /* Adjust based on modal size and desired image size */
-max-height: 20%; /* Maintain aspect ratio */
-margin: 2.5px 2.5%; /* Add some space around images */
-display: inline-block; /* Display images side by side */
+width: 30%;  
+max-height: 20%;  
+margin: 2.5px 2.5%;  
+display: inline-block;  
 }
 .image2{
-width: 40%; /* Adjust based on modal size and desired image size */
+width: 40%;  
 
 
-margin: 2.5px 2.5%; /* Add some space around images */
-display: inline-block; /* Display images side by side */
+margin: 2.5px 2.5%;  
+display: inline-block;  
 }
 .image3{
-width: 20%; /* Adjust based on modal size and desired image size */
+width: 20%;  
 
-margin: 2.5px 2.5%; /* Add some space around images */
-display: inline-block; /* Display images side by side */
+margin: 2.5px 2.5%;  
+display: inline-block;  
 }
 .image4{
-width: 50%; /* Adjust based on modal size and desired image size */
+width: 50%;  
 
-margin: 2.5px 2.5%; /* Add some space around images */
-display: inline-block; /* Display images side by side */
+margin: 2.5px 2.5%;  
+display: inline-block;  
 }
 
 .image5{
@@ -565,7 +564,7 @@ width: 100%;
 display: flex;
 flex-direction: column; /* Stack children vertically */
 align-items: center; /* Center children horizontally */
-gap: 2.5px; /* Space between items */
+gap: 2.5px;  
 }
 
 .modal-image21{
@@ -647,37 +646,37 @@ align-items: center;
 }
 
 #increase{
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 
 
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 justify-self: center;
 border-radius: 12.5px;
-background-color: #00BF63; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #00BF63;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s;
 cursor: pointer;
 }
 
 #decrease{
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 
 justify-self: center;
 border-radius: 12.5px;
-background-color: #FF3131; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #FF3131;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s;
 cursor: pointer;
 }
@@ -714,15 +713,15 @@ padding-bottom: 4%;
 display: flex;
 flex-direction: column;
 gap: 10%;
-align-items: center; /* Center children horizontally */
+align-items: center;  
 position: relative;
 background-color: #222222;
 margin: 15% auto;
 padding: 5px;
 top: -15%;
 border: 0.25px solid #888;
-width: 70%; /* Adjust width as needed */
-height: 70%; /* Adjust height as needed */
+width: 70%;  
+height: 70%;  
 transition: transform 0.5s ease-out, opacity 0.5s linear;
 }
 .end-modal-title{
@@ -748,10 +747,7 @@ border-bottom: 1;
 width: 100%;
 display: flex;
 background-color: #292B2A;
-/* Add some padding around the progress bar for visibility */
- /* Optional: Adds rounded corners to the container */
-
- /* Optional: Adds a subtle shadow for depth */
+ 
  border-radius: 2px;
  align-items: center;
  font-size: 1.25rem;
@@ -768,7 +764,7 @@ align-items: center;
 font-size: 1.75rem;
 border-radius: 2px;
 transition: width 0.3s ease;
-height: 30px; /* Adjust as needed */
+height: 30px; 
 
 }
 
@@ -794,56 +790,56 @@ align-items: center;
 }
 
 #increasePop{
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 
 
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 justify-self: center;
 border-radius:12.5px;
-background-color: #00BF63; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #00BF63;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s;
 cursor: pointer;
 }
 
 #decreasePop{
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 
 justify-self: center;
 border-radius: 12.5px;
-background-color: #FF3131; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #FF3131;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s;
 cursor: pointer;
 }
 
 #summarise{
 width: 15%;
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 font-size: 1rem;
-padding: 2.5px 2px; /* Adds space inside the button */
+padding: 2.5px 2px;  
 margin: 2.5px;
 justify-self: center;
 border-radius: 12.5px;
-background-color: #00BF63; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
-transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+background-color: #00BF63;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
+transition: background-color 0.3s, color 0.3s;  
 cursor: pointer;
 }
 
@@ -858,8 +854,8 @@ margin: 15% auto;
 padding: 5px;
 top: -20%;
 border: 0.25px solid #888;
-width: 70%; /* Adjust width as needed */
-height: 80%; /* Adjust height as needed */
+width: 70%;  
+height: 80%;  
 transition: transform 0.5s ease-out, opacity 0.5s linear;
 }
 
@@ -892,18 +888,18 @@ justify-content: center;
 
 .restart{
 width: 15%;
-display: inline-block; /* Allows the application of padding and margin */
+display: inline-block;  
 font-size: 1rem;
-padding: 2.5px 5px; /* Adds space inside the button */
+padding: 2.5px 5px;  
 margin: 2.5px;
 justify-self: center;
 border-radius: 12.5px;
-background-color: #00BF63; /* Background color of the button */
-color: white; /* Text color */
-text-decoration: none; /* Removes underline from link */
-border-radius: 2.5px; /* Rounds the corners of the button */
-border: none; /* Removes the border */
-text-align: center; /* Centers the text */
+background-color: #00BF63;  
+color: white;  
+text-decoration: none;  
+border-radius: 2.5px;  
+border: none;  
+text-align: center;  
 transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 cursor: pointer;
 }
@@ -973,13 +969,13 @@ position: relative;
 }
 
 .sum-circle{
-width: 65%; /* 80% of the container's width */
-aspect-ratio: 1 / 1; /* Maintains a 1:1 aspect ratio */
-background-color: #707275; /* Circle color */
+width: 65%;  
+aspect-ratio: 1 / 1;  
+background-color: #707275;  
 border: 1.5px solid #A6A6A6; 
-border-radius: 50%; /* Makes it a circle */
-transition: transform 0.5s; /* Smooth transition for transform */
-transform-origin: center; /* Ensures scaling from center */
+border-radius: 50%;  
+transition: transform 0.5s;  
+transform-origin: center;  
 display: flex;
 justify-content: center;
 align-items: center;
@@ -1002,10 +998,7 @@ height: 100%;
 width: 80%;
 display: flex;
 background-color: #292B2A;
-/* Add some padding around the progress bar for visibility */
- /* Optional: Adds rounded corners to the container */
-
- /* Optional: Adds a subtle shadow for depth */
+ 
  border-radius: 2px;
  align-items: center;
  font-size: 1.25rem;
@@ -1022,7 +1015,7 @@ align-items: center;
 font-size: 1.75rem;
 border-radius: 2px;
 transition: width 0.3s ease;
-height: 30px; /* Adjust as needed */
+height: 30px; 
 
 }
 
@@ -1069,10 +1062,10 @@ height: 100%;
 }
 
 .bin-pics{
-position: absolute; /* Position images absolutely within the flex container */
-max-width: 30%; /* Adjust based on your preference */
-max-height: 50%; /* Adjust based on your preference */
-transform: translate(-50%, -50%); /* Adjust for exact centering */
+position: absolute;  
+max-width: 30%;  
+max-height: 50%;  
+transform: translate(-50%, -50%);  
 top: 50%;
 left: 50%;
 z-index: -1
@@ -1103,25 +1096,25 @@ color: #fff;
 }
 
 #divider {
-width: 100%; /* Adjust the width as needed */
-height: 0.5px; /* Adjust the thickness of the line */
+width: 100%;  
+height: 0.5px;  
 float: left;
 
 background-color: white;
-margin: 2.5px auto; /* Centers the line horizontally and adds space above and below */
+margin: 2.5px auto;  
 }
 
 .info-button {
 position: relative;
-display: inline-flex; /* Use flex to center content */
-justify-content: center; /* Center horizontally */
-align-items: center; /* Center vertically */
-background-color: #101010; /* Example color */
-color: white; /* Text color */
-padding: 2.5px 11.25px; /* Adjust padding to scale with font size */
-border-radius: 50%; /* Make it circular */
+display: inline-flex; 
+justify-content: center;  
+align-items: center;  
+background-color: #101010;  
+color: white;  
+padding: 2.5px 11.25px;  
+border-radius: 50%;  
 cursor: pointer;
-font-size: 1.25rem; /* Adjust font size as needed */
+font-size: 1.25rem; 
 font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
 
 }
@@ -1129,11 +1122,11 @@ font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida San
 .hover-box {
 visibility: hidden;
 position: absolute;
-min-width: 250px; /* Minimum width to ensure it's wider */
- /* A reasonable maximum width relative to the viewport */
-width: auto; /* Allows the box to expand based on content up to max-width */
-padding: 0.25rem; /* Adjust padding to fit large text */
-font-size: 1rem; /* Large font size */
+min-width: 250px;  
+ 
+width: auto;  
+padding: 0.25rem;  
+font-size: 1rem;  
 background-color: #f9f9f9;
 color: #000;
 text-align: left;
@@ -1144,7 +1137,7 @@ z-index: 100;
 left: 1600%;
 transform: translateX(-50%);
 box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-/* Adjust line height for better readability with large text */
+ 
 line-height: 1.2;
 }
 

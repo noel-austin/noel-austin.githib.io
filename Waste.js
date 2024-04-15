@@ -41,8 +41,7 @@ class Waste {
         this.targetBin = targetBin;
         this.size = size;
         this.ratio = ratio;
-        this.currentSize = size;
-        this.currentRatio = this.currentRatio;
+
     }
 }
 

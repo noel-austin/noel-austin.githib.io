@@ -51,20 +51,20 @@ document.addEventListener('DOMContentLoaded', function () {
         let totalUsedDollars = budgetSliders.reduce((acc, slider) => acc + (Number(slider.value) * unitValue), 0);
         console.log(totalBudget);
         console.log(totalUsedDollars);
-        // Check if the total dollar amount exceeds the budget
+        // check if the total dollar amount exceeds the budget
         if (totalUsedDollars > totalBudget) {
-            // If so, revert each slider to its last valid value
+            // if yes, revert each slider to its last valid value
             budgetSliders.forEach((slider, i) => {
                 slider.value = lastValues[i];
             });
-            // Update the displayed total to reflect the last valid total
+            // update the shown total to show the last valid total
             totalUsedDollars = lastValues.reduce((acc, val) => acc + (val * unitValue), 0);
         } else {
-            // If under budget, update last valid values to current
+            // if under budget, update last valid values to current
             budgetSliders.forEach((slider, i) => lastValues[i] = Number(slider.value));
         }
 
-        // Update displayed values
+        // update shown values
         totalUsedSpan.textContent = ` €${(totalUsedDollars / 1000000)}`;
         budgetSliders.forEach((slider, i) => budgetValues[i].textContent = `${(Number(slider.value) * unitValue / 1000000).toFixed(0)}m`);
 
@@ -82,48 +82,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function updatePopularity() {
-        // Calculate total decrease, with special handling for the mapped slider
+        //  
         let totalDecrease = popularitySliders.reduce((acc, slider, index) => {
             let sliderValue = Number(slider.value);
-            // If the slider is the one with a 0-30 range, map its value to 0-100
+
             if (index === 0) {
-                sliderValue = (sliderValue / 30) * 100; // Map 0-30 to 0-100
+                sliderValue = (sliderValue / 30) * 100; //  
             }
             return acc + sliderValue * popUnitValue;
         }, 0);
 
         if (totalDecrease > maxPopularityDecrease) {
-            // Revert slider values if the total decrease exceeds the maximum allowed
+            //  
             popularitySliders.forEach((slider, index) => {
                 slider.value = popLastValues[index];
             });
-            // Recalculate total decrease using reverted (and properly mapped) values
+            //  
             totalDecrease = popLastValues.reduce((acc, value, index) => {
                 let adjustedValue = value;
                 if (index === 0) {
-                    adjustedValue = (adjustedValue / 30) * 100; // Map 0-30 to 0-100 for reverted value
+                    adjustedValue = (adjustedValue / 30) * 100;
                 }
                 return acc + adjustedValue * popUnitValue;
             }, 0);
         } else {
-            // Update last valid values to current
+
             popularitySliders.forEach((slider, index) => {
                 popLastValues[index] = Number(slider.value);
             });
         }
 
-        // Ensure currentPopularity does not exceed the base minus the maximum allowed decrease
+
         currentPopularity = Math.max(basePopularity - totalDecrease, basePopularity - maxPopularityDecrease);
 
-        // Update the visual representation of popularity
+
         popularity.textContent = `${currentPopularity.toFixed(0)}%`;
         popularity.style.width = `${currentPopularity}%`;
         popularity.style.backgroundColor = currentPopularity <= 40 ? 'red' : (currentPopularity < 65 ? 'orange' : '#4CAF50');
 
 
-        // Update displayed slider values (adjust if mapping needs to be displayed)
+
         popularitySliders.forEach((slider, index) => {
-            popularityValues[index].textContent = slider.value; // Consider adjusting if displaying mapped values
+            popularityValues[index].textContent = slider.value;
         });
     }
 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     anychart.onDocumentReady(function () {
-        // Data for the circle packing chart
+
         createWasteObjects();
         var wasteList = [plasticW, paperW, cardboardW, metalW, nappiesW, finesW, foodW, gardenW, weeeW, textilesW, hazardousW, glassW, contaminationW];
         var binList = [generalWasteBin, recyclingWasteBin, organicWasteBin, bringCentreBin];
@@ -155,16 +155,16 @@ document.addEventListener('DOMContentLoaded', function () {
         label.hAlign("center");
         label.vAlign("middle");
 
-        // set the label as the center content
+
         budgetChart.center().content(label);
-        budgetChart.innerRadius("70%"); // Makes it a doughnut chart
+        budgetChart.innerRadius("70%");
         budgetChart.container('budgetGraph');
         //budgetChart.background().fill("#222222");
         budgetChart.legend(true);
         budgetChart.legend().fontSize("0.875rem");
-        budgetChart.legend().itemsLayout("vertical"); // Sets the legend items layout to vertical
-        budgetChart.legend().padding(2.5, 0, 2.5, 0); // Top, Right, Bottom, Left padding of the legend
-        budgetChart.legend().margin(0); // Sets the margin around the legend
+        budgetChart.legend().itemsLayout("vertical");
+        budgetChart.legend().padding(2.5, 0, 2.5, 0);
+        budgetChart.legend().margin(0);
         budgetChart.legend().position("left");
         budgetChart.legend().fontColor("#fff");
         budgetChart.legend().itemsFormat(function (item) {
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         chart1.draw();
         var sumPieChart1 = anychart.pie(chart1.data());
-        sumPieChart1.innerRadius("70%"); // Makes it a doughnut chart
+        sumPieChart1.innerRadius("70%");
         sumPieChart1.container('sum-chart1');
 
         sumPieChart1.legend(false);
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         sumPieChart1.draw();
 
-        chart2.innerRadius("70%"); // Makes it a doughnut chart
+        chart2.innerRadius("70%");
         chart2.container('chart2');
         //chart2.background().fill("none");
         chart2.legend(false);
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         chart2.draw();
         var sumPieChart2 = anychart.pie(chart2.data());
-        sumPieChart2.innerRadius("70%"); // Makes it a doughnut chart
+        sumPieChart2.innerRadius("70%");
         sumPieChart2.container('sum-chart2');
         //sumPieChart2.background().fill("none");
         sumPieChart2.legend(false);
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         sumPieChart2.draw();
 
-        chart3.innerRadius("70%"); // Makes it a doughnut chart
+        chart3.innerRadius("70%");
         chart3.container('chart3');
         //chart3.background().fill("none");
         chart3.legend(false);
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         chart3.draw();
         var sumPieChart3 = anychart.pie(chart3.data());
-        sumPieChart3.innerRadius("70%"); // Makes it a doughnut chart
+        sumPieChart3.innerRadius("70%");
         sumPieChart3.container('sum-chart3');
         //sumPieChart3.background().fill("none");
         sumPieChart3.legend(false);
@@ -305,16 +305,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         var data = ([
-            { x: "General Waste", value: 25, fill: "#545454" }, // This value will be dynamically updated
+            { x: "General Waste", value: 25, fill: "#545454" },
             { x: "Recycling", value: 25, fill: "#00BF63" },
             { x: "Organic Waste", value: 25, fill: "#745D3B" },
             { x: "Bring Centre", value: 25, fill: "#FFC001" }
         ]);
         var barChart = anychart.column(data);
-        // Assuming barChart is your AnyChart column chart instance
-        var series = barChart.getSeriesAt(0); // Get the first series
+
+        var series = barChart.getSeriesAt(0);
         if (series) {
-            series.normal().stroke(null); // Attempt to remove the stroke
+            series.normal().stroke(null);
         }
 
         barChart.xAxis().labels().fontSize(7.5);
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
         barChart.tooltip().titleFormat("");
         barChart.tooltip().useHtml(true);
         barChart.tooltip().format(function () {
-            // Customize tooltip title and content with HTML, including font size
+
             return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
                 '<div style="font-size: 0.75rem;">' + this.value.toFixed(0) + '%</div>';
         });
@@ -344,14 +344,14 @@ document.addEventListener('DOMContentLoaded', function () {
         sumBarChart.tooltip().titleFormat("");
         sumBarChart.tooltip().useHtml(true);
         sumBarChart.tooltip().format(function () {
-            // Customize tooltip title and content with HTML, including font size
+
             return '<div style="font-size: 1rem; font-weight: bold;">' + this.x + '</div>' +
                 '<div style="font-size: 0.75rem;">' + this.value.toFixed(0) + '%</div>';
         });
         sumBarChart.background().fill("none");
-        var series2 = sumBarChart.getSeriesAt(0); // Get the first series
+        var series2 = sumBarChart.getSeriesAt(0);
         if (series2) {
-            series2.normal().stroke(null); // Attempt to remove the stroke
+            series2.normal().stroke(null);
         }
         sumBarChart.draw();
 
@@ -419,12 +419,12 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.labels().useHtml(true);
         chart.labels().useHtml(true);
         chart.labels().format(function () {
-            // Directly access the name and value from the function context
+
             var name = this.name;
             var value = this.value.toFixed(0);
             var color = (name === "Bring Centre" || this.getData('isBringCentre')) ? 'black' : 'white';
 
-            // Construct the HTML string manually with the dynamic data and desired color
+            //makes the text black for bring centre waste
             return `<span style='font-size:12.5px; color: ${color};'>${name}<br>${value}kg</span>`;
         });
         chart.labels().position("circular");
@@ -434,16 +434,16 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.calculationMode("parent-independent");
         chart.tooltip().useHtml(true);
         chart.tooltip().format(function () {
-            // Customize tooltip title and content with HTML, including font size
+
             return '<div style="font-size: 1rem; font-weight: bold;">' + this.name + '</div>' +
                 '<div style="font-size: 0.75rem;">' + this.value + 'kg per person</div>';
         });
 
 
-        // Set the container id for the chart
+
         chart.container('circleChart');
         chart.background().fill("none");
-        // Initialize chart drawing
+
         chart.draw();
 
 
@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var value3 = parseInt(slider3.value);
             var value4 = parseInt(slider4.value) * (100 / 30);
             var value5 = parseInt(slider5.value);
-
+            //for each waste object, the size is updated each time a slider value is changed by a user.
             plasticW.size = plasticBaseSize - (0.2 * ((value1 + value2) / 200) * plasticBaseSize) - (0.2 * (value4 / 100) * plasticBaseSize);
 
             paperW.size = paperBaseSize - (0.2 * ((value1 + value2) / 200) * paperBaseSize) - (0.2 * (value4 / 100) * paperBaseSize);
@@ -474,8 +474,8 @@ document.addEventListener('DOMContentLoaded', function () {
             contaminationW.size = contaminationBaseSize - ((value5 / 100) * contaminationBaseSize);
 
             plasticW.ratio = adjustArrayValues(plasticRatioBase.slice(), ((value1 + value2) / 200), plasticW.targetBin - 1);
-            //let swag = plasticW.ratio[0] + plasticW.ratio[1] + plasticW.ratio[2] + plasticW.ratio[3];
-            //console.log(plasticW.ratio + " = " + swag);
+            //let test = plasticW.ratio[0] + plasticW.ratio[1] + plasticW.ratio[2] + plasticW.ratio[3];
+            //console.log(plasticW.ratio + " = " + test);
             paperW.ratio = adjustArrayValues(paperRatioBase.slice(), ((value1 + value2) / 200), paperW.targetBin - 1);
             cardboardW.ratio = adjustArrayValues(cardboardRatioBase.slice(), ((value1 + value2) / 200), cardboardW.targetBin - 1);
             metalW.ratio = adjustArrayValues(metalRatioBase.slice(), ((value1 + value2) / 200), metalW.targetBin - 1);
@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal1 = 0;
             }
             else {
-                totalGen.style.color = '#4CAF50'; // Default green color
+                totalGen.style.color = '#4CAF50';
                 goal1 = 1;
             }
 
@@ -556,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal2 = 0;
             }
             else {
-                genWaste.style.color = '#4CAF50'; // Default green color
+                genWaste.style.color = '#4CAF50';
                 goal2 = 1;
             }
 
@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 goal3 = 0;
             }
             else {
-                bringUsage.style.color = '#4CAF50'; // Default green color
+                bringUsage.style.color = '#4CAF50';
                 goal3 = 1;
             }
             goals = goal1 + goal2 + goal3;
@@ -604,14 +604,14 @@ document.addEventListener('DOMContentLoaded', function () {
             popularity2.style.backgroundColor = popularity2Value <= 40 ? 'red' : '#4CAF50'; // Change color based on value
             event.preventDefault();
             //if (goals == 3) {
-            // Show the modal if goals are completed
+
 
             endModal.style.display = "block";
             setTimeout(() => {
                 endModal.style.opacity = 1;
                 document.querySelector('.end-modal-content').style.transform = 'translateY(0px)';
                 document.querySelector('.end-modal-content').style.opacity = 1;
-                showFirstPage(); // Ensure it starts on the first page
+                showFirstPage();
             }, 10);
             // } else {
             // Show alert if goals are not completed
@@ -629,14 +629,13 @@ document.addEventListener('DOMContentLoaded', function () {
             endModal.addEventListener('transitionend', function () {
                 endModal.style.display = "none";
             }, { once: true });
-            // Show the modal if goals are completed
 
             summaryModal.style.display = "block";
             setTimeout(() => {
                 summaryModal.style.opacity = 1;
                 document.querySelector('.summary-modal-content').style.transform = 'translateY(0px)';
                 document.querySelector('.summary-modal-content').style.opacity = 1;
-                showFirstPage(); // Ensure it starts on the first page
+                showFirstPage();
             }, 10);
 
 
@@ -685,11 +684,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 currency: currency,
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
-                currencyDisplay: 'symbol', // You can also use 'code' or 'name'
+                currencyDisplay: 'symbol',
             });
 
             const formattedValue = formatter.format(Math.abs(value));
-            const formattedValueWithSuffix = `${formattedValue}m`; // Append "m" directly
+            const formattedValueWithSuffix = `${formattedValue}m`;
             return isNegative ? `-${formattedValueWithSuffix}` : formattedValueWithSuffix;
         }
 
@@ -777,7 +776,7 @@ document.addEventListener('DOMContentLoaded', function () {
             totalWaste = generalWasteBin.total + recyclingWasteBin.total + organicWasteBin.total + bringCentreBin.total;
             let newData =
                 [
-                    { x: "General Waste", value: generalWasteBin.total / totalWaste * 100, fill: "#545454" }, // This value will be dynamically updated
+                    { x: "General Waste", value: generalWasteBin.total / totalWaste * 100, fill: "#545454" },
                     { x: "Recycling", value: recyclingWasteBin.total / totalWaste * 100, fill: "#00BF63" },
                     { x: "Organic Waste", value: organicWasteBin.total / totalWaste * 100, fill: "#745D3B" },
                     { x: "Bring Centre", value: bringCentreBin.total / totalWaste * 100, fill: "#FFC001" }
@@ -818,9 +817,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         function clearTextSelection() {
-            if (window.getSelection) { // All browsers except IE <9
+            if (window.getSelection) {
                 window.getSelection().removeAllRanges();
-            } else if (document.selection) { // IE <9
+            } else if (document.selection) {
                 document.selection.empty();
             }
         }
@@ -844,48 +843,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Get the modal
+
 var modal = document.getElementById("myModal");
 
-// Get the help button
+
 var btn = document.getElementById("helpBtn");
 
-// Get the <span> element that closes the modal
+
 var span = document.getElementsByClassName("close")[0];
 
-// Function to show only the first page of the modal
+
 function showFirstPage() {
-    // Hide all pages
+    // hide all pages
     document.querySelectorAll('.modal-page').forEach(page => {
         page.style.display = 'none';
     });
-    // Show only the first page
+    // show only the first page
     document.querySelector('.modal-page[data-page="1"]').style.display = 'block';
 }
 
-// When the page loads, open the modal on the first page
+// this page loads automatically at the start
 window.onload = function () {
     modal.style.display = "block";
-    setTimeout(() => { // Allow for the modal to be displayed before starting the opacity transition
+    setTimeout(() => {
         modal.style.opacity = 1;
         document.querySelector('.modal-content').style.transform = 'translateY(0px)';
         document.querySelector('.modal-content').style.opacity = 1;
-    }, 10); // Short delay to ensure the display: block has taken effect
+    }, 10);
 
 }
 
-// When the user clicks the button, open the modal and ensure it starts on the first page
+// opens modal when user hits help
 btn.onclick = function () {
     modal.style.display = "block";
     setTimeout(() => {
         modal.style.opacity = 1;
         document.querySelector('.modal-content').style.transform = 'translateY(0px)';
         document.querySelector('.modal-content').style.opacity = 1;
-        showFirstPage(); // Ensure it starts on the first page
+        showFirstPage(); // ensure it starts on the first page
     }, 10);
 }
 
-// When the user clicks on <span> (x), close the modal
+// closes the mdoal
 span.onclick = function () {
     modal.style.opacity = 0;
     document.querySelector('.modal-content').style.transform = 'translateY(-50px)';
@@ -895,7 +894,7 @@ span.onclick = function () {
     }, { once: true }); // Use the { once: true } option to ensure the listener is removed after execution
 }
 
-// Navigate through modal pages
+// navigate through modal pages
 document.querySelectorAll('.next, .prev').forEach(button => {
     button.addEventListener('click', function () {
         const currentPage = this.closest('.modal-page');
@@ -919,7 +918,7 @@ document.querySelectorAll('.begin').forEach(button => {
     });
 });
 
-// When the user clicks anywhere outside of the modal, close it
+// clicking anywehre else on the screen closese the modal
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.opacity = 0;
@@ -937,7 +936,6 @@ window.onclick = function (event) {
 function openNav() {
     document.getElementById("mySidenav").style.width = "50%";
 }
-
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
@@ -948,7 +946,7 @@ function incrementBudget(categoryId) {
     let propertyName = categoryId + "Deduction";
 
     if (categoryValue <= 30) {
-        categoryValue -= 30; // Decrease by a fixed amount or a chosen value
+        categoryValue -= 30; // decrease by 30
         categoryValueElement.innerText = categoryValue;
         if (deductions.hasOwnProperty(propertyName)) {
             deductions[propertyName] -= 30;
@@ -956,10 +954,10 @@ function incrementBudget(categoryId) {
         else {
             console.log("Increment: Property doesnt exist: ", propertyName);
         }
-        // Increase Recycling and Waste Budget
+        // increase Recycling and Waste Budget
         const recyclingValueElement = document.getElementById('recyclingAndWasteValue');
         let recyclingValue = parseInt(recyclingValueElement.innerText);
-        recyclingValue += 30; // Increase by the same amount
+        recyclingValue += 30; // increase by the same amount
         recyclingValueElement.innerText = recyclingValue;
         updateBudget(recyclingValue);
     }
@@ -973,10 +971,10 @@ function decrementBudget(categoryId) {
     let categoryValue = parseInt(categoryValueElement.innerText);
     // Only allow incrementing if there's budget in Recycling and Waste
     if (recyclingValue > 0 && categoryValue <= -30) {
-        recyclingValue -= 30; // Decrease Recycling and Waste by a fixed amount
+        recyclingValue -= 30; // Decrease Recycling and Waste by 30
         recyclingValueElement.innerText = recyclingValue;
 
-        // Increase the specific category's budget
+        // Increase the specific sector budget
 
         categoryValue += 30; // Increase by the same amount
         categoryValueElement.innerText = categoryValue;

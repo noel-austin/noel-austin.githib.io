@@ -41,13 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (popularity < 70) {
             popularityBar.style.backgroundColor = 'orange';
         } else {
-            popularityBar.style.backgroundColor = '#4CAF50'; // Default green color
+            popularityBar.style.backgroundColor = '#4CAF50';
         }
 
     }
 
     function clearTextSelection() {
-        if (window.getSelection) { // All browsers except IE <9
+        if (window.getSelection) {
             window.getSelection().removeAllRanges();
         } else if (document.selection) { // IE <9
             document.selection.empty();

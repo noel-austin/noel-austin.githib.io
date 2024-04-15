@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var slider = document.getElementById('slider');
     var circle = document.getElementById('circle');
 
-    var initialSize = 500;
-    var initialFontSize = 4; // Initial font size in em
 
+    var initialFontSize = 4;
     var data1 = [
         { x: "General Waste", value: 100, fill: "#545454" },
         { x: "Recyclable Waste", value: 100, fill: "#00BF63" },
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var chart1 = anychart.pie(data1);
     var chart2 = anychart.pie(data2);
 
-    /*chart1.innerRadius("70%"); // Makes it a doughnut chart
+    /*chart1.innerRadius("70%");  
     chart1.container('chart1');
     chart1.background().fill("#222222");
     chart1.legend(false);
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     chart1.draw();
 */
-    chart2.innerRadius("70%"); // Makes it a doughnut chart
+    chart2.innerRadius("70%");
     chart2.container('chart2');
     chart2.background().fill("#222222");
     chart2.legend(false);
@@ -42,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateChart() {
         var averageValue = parseInt(slider.value);
-        var max = parseInt(slider.max); // Assuming both sliders have the same max
+        var max = parseInt(slider.max); // assumes both sliders have the same max
 
         var inverseSize = (max - averageValue);
 
@@ -69,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var sliderValue = parseInt(slider.value);
 
-        var max = parseInt(slider.max); // Assuming both sliders have the same max
+        var max = parseInt(slider.max); // assumes both sliders have the same max
 
         var inverseSize = (max - sliderValue) / 100;
         circle.style.transform = 'scale(' + inverseSize + ')';
@@ -94,14 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (popularity < 70) {
             popularityBar.style.backgroundColor = 'orange';
         } else {
-            popularityBar.style.backgroundColor = '#4CAF50'; // Default green color
+            popularityBar.style.backgroundColor = '#4CAF50';
         }
     }
 
     function clearTextSelection() {
-        if (window.getSelection) { // All browsers except IE <9
+        if (window.getSelection) {
             window.getSelection().removeAllRanges();
-        } else if (document.selection) { // IE <9
+        } else if (document.selection) {
             document.selection.empty();
         }
     }
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.addEventListener('input', updateCircle);
     slider.addEventListener('input', updateChart);
 
-    // Initialize circle size
+    //initialise circles and charts
     updateCircle();
     updateChart();
 
